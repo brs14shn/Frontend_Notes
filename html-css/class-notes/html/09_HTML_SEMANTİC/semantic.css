@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    /*HEADER*/
+
+}
+header{
+    background-color: red;
+    height: 60px;
+    padding-top:10px;
+    border: 5px solid black;
+    text-align: center;
+    width: 100%;
+    top:0;
+    left: 0;
+    position: fixed;   
+}
+h1{
+/* border: 2px solid blue; */
+padding: 5px;
+border-radius: 25px;
+border: 5px solid white;
+color:white;
+font-size:x-large;
+display: inline-block;
+position: fixed;
+}
+
+.banner{
+    padding-bottom: 30px;
+}
+
+/*NAV-BAR*/
+
+}
+.main-nav{
+    background-color: lightgray;
+    padding-top: 10px;
+    padding-left: 25px;  
+    width: 100%;
+    left:0;
+    top:0;  
+    /* position: sticky; */
+}
+.main>ul>li{
+    display: flex;
+    justify-content: space-around;
+   
+}
+.main-nav li{
+    /* border: 3px solid red;  */
+    display: inline-block; 
+    margin-bottom: 20px;
+    margin-left: 150px;
+    width: 200px;   
+} 
+
+.join a {
+    color:red;
+}
+.main-nav a{
+    text-decoration: none;
+    color: black;
+}
+
+main{
+    margin:20px 150px;
+    /* border: 2px solid yellow; */
+    
+   
+}
+article>h2{
+    color: red;
+    margin-bottom: 10px;
+    /* border:2px solid red; */
+    width: 200px;
+    margin-left: 60px;
+    /* border: 2px solid red; */
+      
+}
+ article>p{
+    text-align: justify;
+    margin:0 80px;
+    margin-bottom: 20px;
+    /* border: 2px solid blue; */
+}
+.images{
+    /* border: 2px solid blue; */
+    
+}
+.images>li{
+    /* border: 2px solid red; */
+    width: 150px;
+    display: inline;   
+    
+}
+.images img{
+    height: 200px;
+    margin-left: 200px;
+    margin-bottom: 50px;  
+}
+h2,p{
+    text-align: center;
+    color:black
+}
+ input{
+     border:5px solid white;
+     border-radius: 25px;
+     background-color: rgb(250, 249, 249); 
+     height: 20px;
+     /* box-shadow: 3px 3px 5px white;  */
+    
+    
+}
+.join{
+    background-color: lightgray;
+    /* padding-bottom: 60px; */
+    outline:none;
+    padding-bottom: 20px;
+    
+    
+}
+#submit{
+    border-color:green;
+    width: 80px;
+    border-width: 3px;
+    background-color: lightgray;
+}
+form{
+
+    margin-left: 600px;
+}
+
+footer{
+    background-color: red;
+    border: 2px solid black;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+footer>p{
+    vertical-align: middle;
+    font-size: small;
+}
+    
+
+

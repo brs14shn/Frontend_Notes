@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurulum Sözleşmesi</title>
+    <style>
+        
+        h2 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .kaydet {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        #ad {
+            margin-left: 99px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+        #soyad {
+            margin-left: 78px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+        #yaş {
+            margin-left: 95px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+        #mail {
+            margin-left: 43px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+        #fotoğraf {
+            margin-left: 31px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+        [name="SGT"] {
+            margin-right: 80px;
+        }
+
+        [type="radio"] {
+            margin-left: 210px;
+        }
+
+        [name="yıl"] {
+            margin-left: 97px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>ABC Tasarım Programı Kurulum ve Satış Sözleşmesi </h2>
+
+    <div>
+        <form action="">
+            <div class="start">
+                <fieldset>
+                    <legend>Sözleşme Onay</legend>
+
+                    <input type="checkbox" name="Sözleşme_Onayı" id="onay">
+                    <label for="onay">Aşağıdaki bilgilerin doğruluğunu kabul ediyorum ve sözleşmeyi
+                        onaylıyorum.</label><br>
+                    <div class="kaydet"><label for="kaydet"></label>
+                        <input style="background-color: lightgray;" type="text" name="kaydet" id="kaydet"
+                            value="Formu kaydet">
+                        <label for="temizle"></label>
+                        <input style="background-color: lightgray;" type="text" name="temizle" id="temizle"
+                            value="Formu Temizle"><br>
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <fieldset>
+                <legend>Kişisel Bilgiler</legend>
+                <label for="güvenlik">Form Güvenlik ID</label>
+                <input type="text" name="güvenlik" id="güvenlik" placeholder="124243"><br>
+                <label for="ad">Ad</label>
+                <input type="text" name="ad" id="ad"><br>
+                <label for="soyad">Soyad</label>
+                <input type="text" name="soyad" id="soyad"><br>
+                <label for="yaş">Yaş</label>
+                <input type="number" name="yaş" id="yaş" min="18" max="30" step="2"><br>
+                <label for="mail">Mail Adresi</label>
+                <input type="mail" name="mail" id="mail"><br>
+                <label for="fotoğraf">Fotoğraf Ekle</label>
+                <input type="file" name="foto" id="fotoğraf"><br>
+
+            </fieldset>
+            <fieldset>
+                <legend>Diğer Bilgileri</legend>
+                <label><b>Buradaki alanlar mesleki deneyimi kapsar</b></label><br>
+                <label name="SGT" for="SGT">Sektöre Giriş Tarihi</label>
+                <input type="date" name="giriş_tarihi" id="SGT"><br>
+                <input type="radio" name="1-5" id="1-5">
+                <label for="6-10">1-5 yıl</label><br>
+                <label>Sektör Deneyimi <input type="radio" name="yıl"> 6-10 yıl</label><br>
+                <input type="radio" name="6-10" id="6-10">
+                <label for="6-10">11-15 yıl</label><br>
+
+
+                <input type="radio" name="6-10" id="6-10">
+                <label for="6-10">15 üzeri</label><br>
+
+
+
+            </fieldset>
+        </form>
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>
