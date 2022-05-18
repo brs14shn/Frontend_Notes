@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-2</title>
+</head>
+
+<body>
+    <form action="result.html" method="GET" name="myform"></form>
+
+    <div>
+        <label for="cars">Choose a car</label>
+        <br>
+        <select name="cars" id="cars" size="3" multiple>
+            <option value="Porsche">Porsche</option>
+            <option value="BMW">BMW</option>
+            <option value="Mercedes" selected>Mercedes</option>
+            <option value="Audi">Audi</option>
+            <option value="Renault">Renault</option>
+        </select>
+    </div>
+    <hr>
+    <div>
+        <label for="seker2"> Hangi tatlıyı seversiniz:</label>
+        <br>
+
+        <select name="tatlılar" id="seker2" size="10">
+
+            <optgroup label="Sütlü tatlılar">
+            <option value="Sütlaç">Sütlaç</option>
+            <option value="Keşkül">Keşkül</option>
+            <option value="Süpangle">Süpangle</option>
+            <option value="Soguk baklava">Soguk baklava</option>
+            </optgroup>
+
+            <optgroup label="Şerbetli tatlılar">
+            <option value="Baklava">Baklava</option>
+            <option value="Künefe">Künefe</option>
+            <option value="Katmer">Katmer</option>
+            <option value="Tulumba">Tulumba</option>
+            </optgroup>
+        </select><br><br><br>
+
+    </div>
+    <div>
+        <label for="metin">Yorum giriniz:</label><br>
+        <textarea name="yorum" id="metin" cols="20" rows="10" 
+        style="resize: none; width: 75%;" placeholder="Yorumunuzu giriniz"></textarea>
+    </div>
+    <div>
+        <label for="input-browser">Browser: </label>
+        <input type="text" name="Browser" list="Browser" id="input-browser">
+        <datalist id="Browser">
+            <option value="Chrome"></option>
+            <option value="İnternet Explorer"></option>
+            <option value="Safari"></option>
+            <option value="Brave"></option>
+            <option value="Python"></option>
+        </datalist>
+    </div>
+    <div>
+        <fieldset>
+            <legend>Kişisel Bilgileri</legend>
+            <br>
+            <label for="fname"></label>
+            <input type="text" name="fname" id="fname" placeholder="Adınız..."><br>
+            <label for="sname"></label><br>
+            <input type="text" name="sname" id="sname" placeholder="Soyadınız..."><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>İletişim Bilgileri</legend>
+            <br>
+            <label for="tel"></label>
+            <input type="tel" name="fname" id="tel" placeholder="Telefonunuzu giriniz..."><br>
+            <label for="adres"></label><br>
+            <input type="text" name="sname" id="adres" placeholder="Adresinizi giriniz..."><br><br>
+        </fieldset>
+    </div>
+
+    <br>
+    <input type="submit" value="Gönder">
+
+
+
+
+</body>
+
+</html>
