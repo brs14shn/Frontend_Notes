@@ -1,0 +1,66 @@
+*{
+    margin:0;
+    padding:10px;
+
+}
+html{
+    font-size: 20px;
+
+}
+
+body{
+    /* height: 100px;*/
+    height: 100vh; 
+    /* ! yüzde değer verilmez oran yapamaz */
+}
+
+.abs{
+    background-color: aqua;
+    width: 10cm;
+    width:10mm;
+    width:100px;
+}
+
+.div2{
+    background-color: tomato;
+    width:50%;
+    height: 50%;
+}
+
+.div3{
+    background-color: blue;
+    width:50%;
+    height: 50%; /* parent yüksekliği yoksa işlem yapmaz */
+
+}
+.div4{
+    background-color: yellowgreen;
+    width:90vw;
+    height: 20vh;
+}
+
+.div5{
+    font-size:1em;  /*16px*/
+}
+.div6{
+    font-size:2em ; /*32px*/
+}
+.div7{
+    font-size:3em ; /*96px*/
+}
+
+.div8{
+    font-size: 1rem; /* 20px --html değişti çünkü */
+}
+.div9{
+    font-size: 3rem; /* 60px */
+}
+
+
+
+/* TODO: % ⇒ parent elemente göre % verilir. Responsive tasarımın temelleridir. Bazen % sel almaz bunun sebebi parentin width değeri yoktur. Body'nin default bir height değeri yoktur. body'e yüzdesel atanamaz.*/
+
+/*? vw vh ⇒ Görecelilik parenta göre değil tarayıcı alanına göredir. Örn: 50vw ⇒ tarayıcı alanının %50sini kaplar.*/
+
+
+
