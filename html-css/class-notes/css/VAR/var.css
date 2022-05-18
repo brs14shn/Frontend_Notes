@@ -1,0 +1,18 @@
+@import "./theme.css";
+
+
+
+body{
+    font-family: var(--ff-monteserrat);
+}
+
+h1{
+    font-family:var(--ff-lato)
+}
+div{
+    box-shadow: var(--);
+}
+p{
+    color: var(--mavi1);
+    background-color: var(--acik-sari);
+}
