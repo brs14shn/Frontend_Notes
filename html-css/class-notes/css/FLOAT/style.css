@@ -1,0 +1,40 @@
+
+
+.img-float{
+    width:30%;
+    float: left;
+    margin-right:1.5rem;
+}
+.clearfix{
+    clear: left;
+}
+
+box{
+    float: left;
+}
+
+.box{
+    float: left;
+    height: 100px;
+    text-align: center;
+    
+    
+    
+}
+
+.box1{
+    background-color: yellow;
+    width:10%;
+   
+    
+}
+.box2{
+    background-color: red;
+    width:50%;
+    
+}
+.box3{
+    background-color: orange;
+    width:20%;
+   
+}
