@@ -1,5 +1,5 @@
 
-
+//TODO :"SHORT LİNK "
 // ! https://www.youtube.com/watch?v=b7vfp5G4brE => uzun-link
 // ! https://youtu.be/b7vfp5G4brE => kısa-link
 
