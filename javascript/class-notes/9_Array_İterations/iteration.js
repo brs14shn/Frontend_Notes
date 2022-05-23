@@ -123,6 +123,10 @@ console.log(buyuk90);
 //* fiyatlar dizisindeki fiyatı 110'dan küçük olan değerlere
 //*  %10 artış yapın ve bu değerleri konsola tek tek bastırınız.
 
+const price1 = [100, 250, 50, 89];
+const buyuk110=price1.filter((a)=>a<110).map((v)=>v*1.1).forEach((v)=>console.log(v))
+
+
 
 //* maaslar 4000'den düsük olanlara %50 zam yapmak istiyoruz
 //* ve bunu ayri dizi olarak saklamak istiyoruz.
