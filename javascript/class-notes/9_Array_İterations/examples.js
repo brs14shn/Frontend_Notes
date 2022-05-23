@@ -1,10 +1,10 @@
 
 
 
-2
+//örnek
 let numbers=[2,5,8,11,3,20]
 
-console.log(parseInt(numbers.toString()));
+//console.log(parseInt(numbers.toString()));
 
 let kareküp=numbers.map(function(value,indeks){
     if(indeks%2==0){
@@ -15,11 +15,15 @@ let kareküp=numbers.map(function(value,indeks){
     }
 })
 
-console.log(kareküp);
+//console.log(kareküp);
 
-//
+//soru-1
 const price = [100, 250, 50, 89];
 const buyuk90=(price.filter((a) => a>90).map((a)=> a*1.1))
 buyuk90.forEach((a)=>console.log(a));
 
+//soru-2
+const price1 = [100, 250, 50, 89];
+const buyuk110=price1.filter((a)=>a<110).map((v)=>v*1.1).forEach((v)=>console.log(v.toFixed(2)))
 
+console.log(buyuk110);
