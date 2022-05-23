@@ -114,6 +114,12 @@ console.log(kucuk250);
 //* fiyatlar dizisindeki fiyatı 90'dan büyük olan değerleri
 //* konsola tek tek bastırınız.
 
+const price = [100, 250, 50, 89];
+const buyuk90=price.filter((a) => a>90)
+console.log(buyuk90);
+
+
+
 //* fiyatlar dizisindeki fiyatı 110'dan küçük olan değerlere
 //*  %10 artış yapın ve bu değerleri konsola tek tek bastırınız.
 
