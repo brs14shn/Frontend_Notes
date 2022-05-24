@@ -27,3 +27,11 @@ const price1 = [100, 250, 50, 89];
 const buyuk110=price1.filter((a)=>a<110).map((v)=>v*1.1).forEach((v)=>console.log(v.toFixed(2)))
 
 console.log(buyuk110);
+
+
+
+
+
+
+
+
