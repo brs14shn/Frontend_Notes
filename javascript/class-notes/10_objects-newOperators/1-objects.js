@@ -108,6 +108,7 @@ console.log('BILGI:', kisi.ozet());
 //! Çünkü, arrow içerisindeki this kelimesi global scope'u gösterir. (window nesnesini) gösterir.
 //! Bunu engellemek için object fonskyionlarını tanımlamak için normal fonksiyon yöntemlerini kullanmak gerekir.
 
+
 // * ======================================================
 // *                  OBJECT ITERATION
 // * ======================================================
