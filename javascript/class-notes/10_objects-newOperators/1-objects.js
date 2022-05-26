@@ -135,6 +135,7 @@ const kisilerObject = {
 console.log(kisilerObject);
 console.log(kisilerObject.ahmet.is);
 
+//? JSON => javascript Object Notation
 const kisiler = [
   {
     name: 'Ahmet',
@@ -168,20 +169,47 @@ const kisiler = [
     age: 24,
   },
 ];
-console.log(kisiler[4])
 
-kisiler.forEach((kisi)=>console.log(kisi.job))
-const yaslar=kisiler.map((kisi)=>kisi.age+1);
+console.log(kisiler);
+console.log(kisiler[4]);
+//?{name: 'Ruzgar', surname: 'Kuzey', job: 'tester', age: 24}
+
+//* Ornek1: kisiler dizisindeki job'lari tek tek yazdiriniz.
+kisiler.forEach((kisi) => console.log(kisi.job));
+
+//* Ornek2: yaslari bir artirarak yeni bir diziye saklayiniz.
+const yaslar = kisiler.map((kisi) => kisi.age + 1);
 console.log(yaslar);
 
+//* Ornek3: name ve surname'leri birlestirip buyuk harfe ceviren ve
+//* bunu name key'i olarak saklayan, aynı zamanda age degerlerini 5
+//* arttırarak age key'ine saklayan ve oluşan diziyi döndüren kodu yazınız.
 
-const fullName=kisiler.map((kisi)=>(
+const kisilerFullIsim = kisiler.map((kisi) => ({
+  fullname: kisi.name.toUpperCase() + ' ' + kisi.surname.toUpperCase(),
+  age: kisi.age + 5,
+}));
 
-{
-    fullname:kisi.name.toLocaleUpperCase()+" "+kisi.surname.toLocaleUpperCase(),age:kisi.age+5
-}))
-console.log(fullName);
+//? Alternatif syntax
+const kisilerFullIsim1 = kisiler.map((kisi) => {
+  return {
+    fullname: kisi.name.toUpperCase() + ' ' + kisi.surname.toUpperCase(),
+    age: kisi.age + 5,
+  };
+});
 
+console.log(kisilerFullIsim);
+console.log(kisilerFullIsim1);
+
+//* Ornek4: Yasi(age) 33 den kücük olan kisilerin adlarini (name) listeyiniz.
 
 const otuzüc=kisiler.filter((a)=>a.age<33).map((a)=>a.name)
 console.log(otuzüc);
+//* Ornek5: 33 yasindan kücüklerin isimlerini diziye saklayiniz.
+
+//* Ornek6: Meslegi developer olanlarin isim ve yaslarini yeni bir Obje olarak
+//* yeni diziye saklayiniz.
+
+//* Ornek7: kisilerin ortalama yasini hesaplayiniz.
+const ortYas = kisiler.reduce((t, kisi) => t + kisi.age, 0) / kisiler.length;
+console.log('ORT YAS:', ortYas);
