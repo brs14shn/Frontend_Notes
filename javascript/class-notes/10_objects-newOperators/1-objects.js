@@ -209,6 +209,10 @@ console.log(otuzüc);
 
 //* Ornek6: Meslegi developer olanlarin isim ve yaslarini yeni bir Obje olarak
 //* yeni diziye saklayiniz.
+const meslek = kisiler.filter((a)=>a.job=="developer").map((kisi) => ({
+    name:kisi.name,age:kisi.age
+  }));
+  console.log(meslek);
 
 //* Ornek7: kisilerin ortalama yasini hesaplayiniz.
 const ortYas = kisiler.reduce((t, kisi) => t + kisi.age, 0) / kisiler.length;
