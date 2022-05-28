@@ -11,17 +11,27 @@ console.log('***** SELECTORS *****');
 //* EXAMPLE-1 (Paragraph Style)
 //*--------------------------------------------
 
-const header = document.getElementById('header');
+/*const header = document.getElementById('header');
 console.log(header);
 
-header.style.color = 'red';
+header.style.color = 'red';*/
 
 //* EXAMPLE-2 (Button Style)
 //*-------------------------------------------
-const button = document.getElementById('btn');
-btn.style.backgroundColor = 'black';
-btn.style.color = 'yellow';
-btn.style.fontSize = '2rem';
+/*const button = document.getElementById('btn');
+button.style.backgroundColor = 'black';
+button.style.color = 'yellow';
+button.style.fontSize = '2rem';
+//button.style.transform='translateX(500px)';
+button.style.transform='translateX(350px)';
+//button.style.transform='rotate(90deg)'
+button.style.transition='all 5s'
+button.textContent="Buton"
+button.style.border="dashed 5px"
+button.style.borderColor="pink"
+button.style.borderRadius="50%"
+button.style.padding="1rem";*/
+
 
 //*===========================================
 //*          GETELEMENTSBYTAGNAME()
@@ -35,7 +45,10 @@ console.log(img);
 
 img[0].style.border = 'solid';
 img[0].style.borderColor = 'red';
-img[0].style.transform = 'rotate(-5deg)';
+//img[0].style.transform = 'rotateY(-360deg)';
+img[0].style.transform = 'scale(.2,.2)';
+//img[0].style.transform = 'scale(2,2)';
+img[0].style.transition='all 10s'
 
 //*===========================================
 //*          GETELEMENTSBYCLASSNAME()
@@ -43,7 +56,7 @@ img[0].style.transform = 'rotate(-5deg)';
 
 //* EXAMPLE-4
 //* ---------------
-const par = document.getElementsByClassName('par');
+/*const par = document.getElementsByClassName('par');
 // par[0].textContent = 'DOM Manipülasyonu';
 // par[0].innerText = 'DOM Manipülasyonu';
 par[0].innerHTML += ' <a href="https://www.clarusway.com">Clarusway</a>';
@@ -71,4 +84,4 @@ myParsArray.forEach((p) => console.log(p.innerText));
 
 //! querySelector ile CSS vari seçim yapmak mümkündür.
 //! CSS Selector'lerin hepsini kullanmak mümkündr.
-console.log(document.querySelector('section p a'));
+console.log(document.querySelector('section p a'));*/
