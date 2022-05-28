@@ -40,7 +40,7 @@ button.style.padding="1rem";*/
 //*EXAMPLE-3 (img styling)
 //*-------------------------------------------
 
-const img = document.getElementsByTagName('img');
+/*const img = document.getElementsByTagName('img');
 console.log(img);
 
 img[0].style.border = 'solid';
@@ -48,7 +48,7 @@ img[0].style.borderColor = 'red';
 //img[0].style.transform = 'rotateY(-360deg)';
 img[0].style.transform = 'scale(.2,.2)';
 //img[0].style.transform = 'scale(2,2)';
-img[0].style.transition='all 10s'
+img[0].style.transition='all 10s'*/
 
 //*===========================================
 //*          GETELEMENTSBYCLASSNAME()
@@ -60,16 +60,17 @@ img[0].style.transition='all 10s'
 // par[0].textContent = 'DOM Manipülasyonu';
 // par[0].innerText = 'DOM Manipülasyonu';
 par[0].innerHTML += ' <a href="https://www.clarusway.com">Clarusway</a>';
-
+*/
 //* ========================================
 //*              QUERYSELECTOR()
 //* ========================================
-document.querySelector('title').textContent = 'JS09-DOM ❤️';
+//document.querySelector('title').textContent = 'JS09-DOM ❤️';
 
-const myPars = document.querySelectorAll('p');
+const myPars = document.querySelectorAll('.par');
 console.log(myPars); //? NodeList
 myPars.forEach((p) => console.log(p.innerText));
 
+/*
 const myPars1 = document.getElementsByClassName('par');
 console.log(myPars); //? HTML Collection
 
