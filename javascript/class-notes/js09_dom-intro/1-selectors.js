@@ -55,3 +55,10 @@ par[0].innerHTML='<a href="#">Clarusway</a>'
 //*====================================
 //*        QUERYSELECTOR()
 //*====================================
+
+
+const title=document.querySelector('title');
+
+title.textContent='JS09 DOM'
+
+
