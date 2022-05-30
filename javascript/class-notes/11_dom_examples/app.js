@@ -33,7 +33,7 @@ console.log(buttons);*/
 
 
 
-
+//! addbtn 
 addBtn.addEventListener('click', () => {
 
     if (!inputLang.value){
@@ -67,6 +67,8 @@ deleteBtn.onclick=function(){
 }
 
 
+
+//! enter and delete tuşlarıyla işlem yapma
 inputLang.addEventListener('keydown',(e)=>{
 if(e.code==='Enter'){
 addBtn.click()
@@ -83,7 +85,7 @@ if(e.keyCode===108){
 window.onload=()=>{
     JavascriptKontrol();
     inputLang.focus();
-    
+
 }
 
 
