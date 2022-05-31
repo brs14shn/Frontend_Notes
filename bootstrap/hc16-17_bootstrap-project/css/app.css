@@ -31,9 +31,14 @@
   margin-bottom: 1rem;
 }
 .carousel-indicators button{
-  background-color: var(--red);
+  background-color: var(--red)!important;
+  height: .4rem !important;
+  width: 3rem !important;
+  margin-right: .7rem !important;
 
-
+}
+.carousel-caption{
+  bottom: 20vh;
 }
 
 /*! ------------------- 3- ABOUT SECTION ------------------------ */
