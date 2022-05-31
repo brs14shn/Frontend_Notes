@@ -8,11 +8,10 @@ const deleteBtn=document.getElementById('delete')
 
 const langSection=document.getElementById('lang-section')
 
+const ul = document.createElement('ul');
+langSection.appendChild(ul);
 
-const ulCreate=document.createElement('ul');
-langSection.appendChild(ulCreate);
-
-console.log(langSection.children[0]);
+//console.log(langSection.children[0]);
 
 
 
@@ -40,8 +39,8 @@ addBtn.addEventListener('click', () => {
         alert("Please enter a add languages");
     }
     else {
-        ulCreate.innerHTML+=`<li>${inputLang.value}<li>`;
-        inputLang.value="";
+        ul.innerHTML+=`<li>${inputLang.value}<li>`;
+        //inputLang.value="";
         JavascriptKontrol();
     }
         
