@@ -75,6 +75,10 @@ section#courses .nav-link.active{
 }
 
 /*! ------------------- 6- CONTACT SECTION ------------------------ */
+section#contact i{
+  color: var(--red);
+  font-size: 1.8rem;
+}
 
 /** ------------------- UP-BUTTON --------------------- */
 
