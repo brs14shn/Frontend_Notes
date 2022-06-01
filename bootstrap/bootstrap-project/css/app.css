@@ -84,3 +84,14 @@ section#contact i{
 
 /*! -------------------- 7- FOOTER ------------------------ */
 
+footer i {
+  font-size: 2rem;
+  color: white;
+  margin-right: 1rem;
+  transition: color 1s;
+}
+
+footer i:hover {
+  color: var(--red);
+}
+
