@@ -1,23 +1,17 @@
 console.log('**** app.js *******');
 
+const dilInput = document.querySelector('.diller');
+const silBtn = document.getElementById('sil');
+const ekleBtn = document.getElementById('ekle');
 
-const inputLang=document.querySelector('.languages');
-const addBtn=document.getElementById('add');
-const deleteBtn=document.getElementById('delete')
-
-
-const langSection=document.getElementById('lang-section')
+const dilSection = document.querySelector('#dil-section');
 
 const ul = document.createElement('ul');
-langSection.appendChild(ul);
-
-//console.log(langSection.children[0]);
-
-
+dilSection.appendChild(ul);
 
 //? SELECTORS
 //************************************************* */
-/*console.log(dilSection.children[0]);
+console.log(dilSection.children[0]);
 console.log(dilSection.parentNode.parentNode);
 
 // const h1 = ul.closest('.container').firstChild;
@@ -27,65 +21,53 @@ h1.style.color = 'red';
 
 //?container class ı içerisindeki btn class'ına ait olan elementleri arar.
 const buttons = ul.closest('.container').querySelectorAll('.btn');
-console.log(buttons);*/
+console.log(buttons);
 //************************************************* */
 
+ekleBtn.onclick = function () {
+  if (!dilInput.value) {
+    alert('Lütfen bir dil giriniz');
+  } else {
+    ul.innerHTML += ` <li>${dilInput.value}</li>`;
+    dilInput.value = '';
+    javascriptKontrol();
+  }
+};
 
-
-//! addbtn 
-addBtn.addEventListener('click', () => {
-
-    if (!inputLang.value){
-        alert("Please enter a add languages");
+const javascriptKontrol = () => {
+  document.querySelectorAll('ul li').forEach((dil) => {
+    const kucukHarf = dil.textContent.toLowerCase();
+    if (kucukHarf === 'javascript') {
+      // dil.className = 'red';
+      //?Alternatif yöntem
+      dil.setAttribute('class', 'red');
     }
-    else {
-        ul.innerHTML+=`<li>${inputLang.value}<li>`;
-        //inputLang.value="";
-        JavascriptKontrol();
-    }
-        
-})
+  });
+};
 
+silBtn.onclick = function () {
+  ul.childElementCount > 0
+    ? ul.removeChild(ul.lastElementChild)
+    : alert('Silinecek dil kalmadi');
+};
 
-const JavascriptKontrol=()=>{
-    document.querySelectorAll("ul li").forEach((dil)=>{
-       const kucukHarf=dil.textContent.toLocaleLowerCase();
-        if(kucukHarf==="javascript"){
-            //dil.className='red';
-            dil.setAttribute('class','red')
+dilInput.addEventListener('keydown', (e) => {
+  // console.log(e);
+  if (e.keyCode === 13) {
+    ekleBtn.onclick();
+  }
+  // if (e.code === 'Enter') {
+  //   ekleBtn.onclick();
+  // }
+  if (e.code === 'Delete') {
+    silBtn.onclick();
+  }
+});
 
-        } 
-    })
-}
-
-//! delete btn fonksiyonu
-deleteBtn.onclick=function(){
-    ulCreate.childElementCount>0
-    ? ulCreate.removeChild(ulCreate.lastElementChild)
-    :alert('Silinecek eleman kalmadı')
-}
-
-
-
-//! enter and delete tuşlarıyla işlem yapma
-inputLang.addEventListener('keydown',(e)=>{
-if(e.code==='Enter'){
-addBtn.click()
-
-}
-if(e.keyCode===108){
-    deleteBtn.onclick();
-}
-
-})
-
-//inputLang.focus() or
-
-window.onload=()=>{
-    JavascriptKontrol();
-    inputLang.focus();
-
-}
+window.onload = () => {
+  javascriptKontrol();
+  dilInput.focus();
+};
 
 
 
