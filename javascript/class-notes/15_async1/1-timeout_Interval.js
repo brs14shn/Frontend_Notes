@@ -39,9 +39,23 @@ console.log("FS11");
 
 
 //* Asenkron (setTimeout)
-
+//? makro task kuyruğu
 setTimeout(()=>{ //! non-blocking code
     console.log("Nasılsın");
 },1000)  //setTimeout(function, milliseconds);-bir defa yürütülüyor
-
+//* sıfır olması birşeyi değiştirmez.
+//? Micro task kuyruğu
 console.log("İyiyim");
+console.log("Merhaba");
+
+setTimeout(()=>{ //! non-blocking code
+    console.log("Dostum naber");
+},2000)  //
+
+//!süre minumum bekle demek 
+//!iki setTimeout olması durumunda süreye bakılır.
+//! hemen değilde bir süre sonra işlemin yapılmasını istemek gibi
+
+
+// *Examples of macrotasks are setTimeout, setInterval, setImmediate, etc.
+//* Examples of microtasks are, Promises, processes.nextTick, etc
