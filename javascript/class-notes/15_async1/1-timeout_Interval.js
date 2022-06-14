@@ -59,3 +59,47 @@ setTimeout(()=>{ //! non-blocking code
 
 // *Examples of macrotasks are setTimeout, setInterval, setImmediate, etc.
 //* Examples of microtasks are, Promises, processes.nextTick, etc
+
+
+//* Asenkron(setInterval,clearInterval)
+
+
+//*---------------------------------------------------------------
+console.log("Counter started");
+let counter=0;
+const sec1=setInterval(()=>{ //! non-blocking-code
+
+console.log(++counter);
+if(counter>9){
+    clearInterval(sec1)
+}
+
+},1000)
+
+console.log("Counter finished");
+
+
+//! Callback Hell (nested ve birbirine bagli callback'ler)
+//!-----------------------------------------------------------------
+//* Eger birbirine bagimli asenkron kodlarin yazilmasi gerekirse,nested callback
+//* yapisinin kullanilmasi gerekebilir. Fakta bu iyi bir programlama yaklasimi degildir.
+// !callback hell olarak adlandirilan bu yapinin anlasilmasi ve surdurulebilirligi oldukca zordur.
+
+
+//! DIŞTAKİ İLK  ÇALIŞIR
+
+setTimeout(() => {
+    console.log("john:Hi");
+    setTimeout(() => {
+      console.log("Sarah: Hello");
+      setTimeout(() => {
+        console.log("John: How Are you?");
+        setTimeout(() => {
+          console.log("Fine and you?");
+        }, 1000);
+      }, 1000);
+    }, 1000);
+  }, 1000);
+
+
+
