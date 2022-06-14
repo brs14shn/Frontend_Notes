@@ -65,7 +65,7 @@ setTimeout(()=>{ //! non-blocking code
 
 
 //*---------------------------------------------------------------
-console.log("Counter started");
+/*console.log("Counter started");
 let counter=0;
 const sec1=setInterval(()=>{ //! non-blocking-code
 
@@ -76,7 +76,7 @@ if(counter>9){
 
 },1000)
 
-console.log("Counter finished");
+console.log("Counter finished");*/
 
 
 //! Callback Hell (nested ve birbirine bagli callback'ler)
@@ -88,7 +88,7 @@ console.log("Counter finished");
 
 //! DIŞTAKİ İLK  ÇALIŞIR
 
-setTimeout(() => {
+/*setTimeout(() => {
     console.log("john:Hi");
     setTimeout(() => {
       console.log("Sarah: Hello");
@@ -100,6 +100,12 @@ setTimeout(() => {
       }, 1000);
     }, 1000);
   }, 1000);
-
-
+*/
+//? COZUMLER:
+//?----------------------------------------------------------------
+//* 1- XMLHttpRequest (Eski yontem, Ornek: AJAX)
+//? https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+//* 2- Promise,
+//! 3- Fetch API (Promise'in basitlestirilmis hali),
+//! 4- ASYNC-AWAIT (Fetch API'nin makyajlanmis hali)
 
