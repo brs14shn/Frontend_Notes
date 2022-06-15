@@ -18,14 +18,14 @@
 //* satirdaki kodun durudurulmasini saglar. Yapilan istek yerine getirilip sonuc
 //* degerlerinin dondurulmesine ile kodun calismasi devam eder.
 
-let error=false;
+let hata=false;
 
 const getUsers=async ()=>{
     try{
-const res=await fetch('https://api.github.com/user')
+const res=await fetch('https://api.github.com/users')
 if(!res.ok){
-    error=true;
-    throw Error(`Something went wrong: ${res.status}`)
+    hata=true;
+    //throw Error(`Something went wrong: ${res.status}`)
 }
 
 const data=await res.json()
@@ -41,8 +41,10 @@ updateDom(data)
 getUsers();
 const updateDom = (data) => {
   const userDiv = document.querySelector('.users');
-  if(error){
-    userDiv.innerHTML=`<h1 class="text-danger">Data can not be fetched</h1>`
+  if(hata){
+    userDiv.innerHTML=`<h1 class="text-danger mt-3">error message</h1>
+    <img src="https://www.elegantthemes.com/blog/wp-content/uploads/2019/12/401-error-wordpress-featured-image.jpg" class="img-thumbnail mt-2">
+    `;
   }
   else{ data.forEach((user) => {
     const { login, avatar_url, html_url } = user;
