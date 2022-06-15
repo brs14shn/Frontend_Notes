@@ -34,9 +34,10 @@ updateDom(data)
     catch(error){
         console.log(error);
     }
-
+    finally{
+        hata=false
+    }
 };
-
 
 getUsers();
 const updateDom = (data) => {
