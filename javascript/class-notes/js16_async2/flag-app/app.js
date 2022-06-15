@@ -1,6 +1,7 @@
 //*=========================================================
 //*                     FLAG-APP
 //*=========================================================
+console.log("lsfblfdş");
 
 const fetchCountry = async (name) => {
     const url = `https://restcountries.com/v3.1/name/${name}`;
@@ -28,7 +29,11 @@ const fetchCountry = async (name) => {
   const renderCountry = (country) => {
     console.log(country);
     const countriesDiv = document.querySelector('.countries');
-    const { capital } = country;
+    const { capital,
+        name:{common},
+    region,
+flags:{svg},
+ } = country;
     console.log(capital);
   };
   
