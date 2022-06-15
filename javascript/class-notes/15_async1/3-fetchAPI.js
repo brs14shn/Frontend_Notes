@@ -30,6 +30,7 @@ const updateDom = (data) => {
     userDiv.innerHTML += `
     <h2 class="text-warning">NAME:${login}</h2>
     <img src=${avatar_url} width="50%" alt="" />;
+    <h3>HTML_URL :${html_url}</h3>
   `;
   });
 };
