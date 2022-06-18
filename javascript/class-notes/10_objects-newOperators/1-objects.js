@@ -22,6 +22,9 @@ araclar.marka = 'BMW';
 araclar.motor = 1.3;
 araclar.model = 2022;
 
+
+
+
 //! Read
 console.log(araclar);
 console.log(araclar.motor); //? . notasyon => 1.3
