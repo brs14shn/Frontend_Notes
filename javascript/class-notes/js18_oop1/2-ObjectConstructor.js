@@ -74,7 +74,13 @@ function Book(title, author, year) {
   //* CLASSA VERİLEN PROTOTYPELAR DİĞERLERİNE DE GEÇER...
  function Magazine(title,author,year,month){
     //* Booktan türetilmiş magazine classı almış olduk
+    /* parent'ın object constructorının çağrılması */
     Book.call(this,title,author,year)
     this.month=month;
  }
- console.log();
+
+ //! prototipler doğrudan miras olarak gelmez...eksikkk
+ const mag1=new Magazine("Scientific Research","Einstein",1905,"September")
+ console.log(mag1);
+//! 
+ Magazine.prototype=Object.create(Book.prototype)
