@@ -80,7 +80,8 @@ function Book(title, author, year) {
  }
 
  //! prototipler doğrudan miras olarak gelmez...eksikkk
- const mag1=new Magazine("Scientific Research","Einstein",1905,"September")
- console.log(mag1);
-//! 
  Magazine.prototype=Object.create(Book.prototype)
+ const mag1=new Magazine("Scientific Research","Einstein",1905,"September")
+ console.log(mag1.getAge());
+//! 
+ 
