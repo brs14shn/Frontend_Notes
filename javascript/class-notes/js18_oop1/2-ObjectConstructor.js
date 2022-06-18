@@ -69,7 +69,12 @@ function Book(title, author, year) {
   console.log(book1.__proto__);
 
 
-  //*========================İNHERİTANCE(KALITIM)===============*
+  //*========================İNHERİTANCE(KALITIM-es5)===============*
 
   //* CLASSA VERİLEN PROTOTYPELAR DİĞERLERİNE DE GEÇER...
-  
+ function Magazine(title,author,year,month){
+    //* Booktan türetilmiş magazine classı almış olduk
+    Book.call(this,title,author,year)
+    this.month=month;
+ }
+ console.log();
