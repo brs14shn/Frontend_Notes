@@ -31,4 +31,17 @@ class Book {
   console.log(book1);
 
   //? sub-Class tanımlanması
-  class Magazine extends Book()
+  class Magazine extends Book{
+    constructor(title,author,year,month){
+    super(title,author,year);//! bookun protptype copy edildi
+    this.month=month
+    //* super türetilen parent=Book constructor
+
+    }
+  }
+  const mag1=new Magazine("Kaşağı","Ömer Seyfettin",1949,"Nov");
+
+  console.log(mag1);
+  console.log(mag1.getSummary());
+
+  
