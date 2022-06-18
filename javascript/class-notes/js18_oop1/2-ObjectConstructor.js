@@ -67,3 +67,9 @@ function Book(title, author, year) {
   
   //!instance'larin proto alanini gormk icin .__proto__
   console.log(book1.__proto__);
+
+
+  //*========================İNHERİTANCE(KALITIM)===============*
+
+  //* CLASSA VERİLEN PROTOTYPELAR DİĞERLERİNE DE GEÇER...
+  
