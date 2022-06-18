@@ -21,14 +21,14 @@ class Book {
     //! bu kısımda yazılan fonksiyonlar prototype alanında bulunur
     getSummary() {
       return `${this.title} was written by ${this.author} in ${this.year} `;
-    }
+   }
   }
   
   //? instance
   const book1 = new Book('Kasagi', 'Omer Seyfettin', 1920);
   const book2 = new Book('Sinekli Bakkal', 'H.Edip Adıvar', 1910);
   
-  console.log(book1);
+  //console.log(book1);
 
   //? sub-Class tanımlanması
   class Magazine extends Book{

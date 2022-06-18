@@ -25,14 +25,17 @@ function Book(title, author, year) {
   //? her bir instance'a da hayat bulmus olur.
   
   //? instance
+  Book.prototype.price=100;
   const book1 = new Book('Kasagi', 'Omer Seyfettin', 1920);
   const book2 = new Book('Sinekli Bakkal', 'H.Edip Adıvar', 1910);
   
-  console.log(book1);
-  console.log(book2.getSummary());
   
-  book1.price = 100;
-  console.log(book1, book2);
+  //console.log(book1);
+  //console.log(book2);
+  //console.log(book2.getSummary());
+  
+ 
+  //console.log(book1, book2);
   
   //! Eger yeni bir property veya fonksiyonu constructor'a eklemek istersek
   //! prototype'ı kullanabiliriz.
@@ -43,9 +46,9 @@ function Book(title, author, year) {
   
   Book.prototype.type = 'novel';
   
-  console.log(book1.getAge());
-  console.log(book2.getAge());
-  console.log(book2.type);
+  //console.log(book1.getAge());
+  //console.log(book2.getAge());
+  //console.log(book2.type);
   
   
   //! Prototype, belirli bir Nesne'nin (Object) tum instance'larina kolay bir
@@ -63,10 +66,10 @@ function Book(title, author, year) {
   
   
   //!Object'lerin proto alanini gormk icin .protoype
-  console.log(Book.prototype);
+  //console.log(Book.prototype);
   
   //!instance'larin proto alanini gormk icin .__proto__
-  console.log(book1.__proto__);
+  //console.log(book1.__proto__);
 
 
   //*========================İNHERİTANCE(KALITIM-es5)===============*
