@@ -26,49 +26,49 @@ console.log(++sayi2); //!8
 
 // ! FUNCTİON + GLOBAL SCOBE 
 
-var value1=10;
-let value2=20;
-const value3=30;
+// var value1=10;
+// let value2=20;
+// const value3=30;
 
 
-function Func(){
-  var value1=11;
-  let value2=22;
-  const value3=33;
-  console.log(value1,value2,value3);
+// function Func(){
+//   var value1=11;
+//   let value2=22;
+//   const value3=33;
+//   console.log(value1,value2,value3);
   
-}
-Func();
+// }
+// Func();
 
 
-console.log(value1,value2,value3)
+// console.log(value1,value2,value3)
 
 
-var value1=10;
-let value2=20;
-const value3=30;
+// var value1=10;
+// let value2=20;
+// const value3=30;
 
 
 
-if(true){
-    var a=3;
-    let b=4;
-    const c=4
-}
+// if(true){
+//     var a=3;
+//     let b=4;
+//     const c=4
+// }
 
-console.log(a,b,c)
-
-
-var value1=10;
-let value2=20;
-const value3=30;
+// console.log(a,b,c)
 
 
-if(true){
-    var value1=3;
-    let value2=4;
-    const value3=19
+// var value1=10;
+// let value2=20;
+// const value3=30;
+
+
+// if(true){
+//     var value1=3;
+//     let value2=4;
+//     const value3=19
    
-}
+// }
 
-console.log(value1,value2,value3)
+// console.log(value1,value2,value3)

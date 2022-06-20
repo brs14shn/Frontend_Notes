@@ -90,4 +90,4 @@ class Book {
   //! Sadece class icerisindeki metotlar taradindan  cagirlabilirler
   // console.log(book1.#computeAge());
   
-  console.log(book1.getSummary());
+  console.log(book1.getSummary())
