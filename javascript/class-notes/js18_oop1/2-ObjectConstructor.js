@@ -10,81 +10,82 @@
 
 //? Object Constructor
 function Book(title, author, year) {
-    this.title = title;
-    this.author = author;
-    this.year = year;
-    this.getSummary = function () {
-      return `${this.title} was written by ${this.author} in ${this.year} `;
-    };
-  }
-  
-  //? new keyword'u Book Constructor'ini parametereler ile cagirmaktadir.
-  //? Constructor ise Book nesnesinden bir ornek (instance) olusturmaktadir.
-  //? Constructor, mantiksal bir ifade iken instance fiziksel bir olusum gibi dusunulebilir.
-  //? Contructor'da tanimlanmis tum degisken ve fonksiyonlar olusturulan
-  //? her bir instance'a da hayat bulmus olur.
-  
-  //? instance
-  Book.prototype.price=100;
-  const book1 = new Book('Kasagi', 'Omer Seyfettin', 1920);
-  const book2 = new Book('Sinekli Bakkal', 'H.Edip Adıvar', 1910);
-  
-  
-  //console.log(book1);
-  //console.log(book2);
-  //console.log(book2.getSummary());
-  
- 
-  //console.log(book1, book2);
-  
-  //! Eger yeni bir property veya fonksiyonu constructor'a eklemek istersek
-  //! prototype'ı kullanabiliriz.
-  
-  Book.prototype.getAge = function () {
-    return new Date().getFullYear() - this.year;
+  this.title = title;
+  this.author = author;
+  this.year = year;
+  this.getSummary = function () {
+    return `${this.title} was written by ${this.author} in ${this.year} `;
   };
-  
-  Book.prototype.type = 'novel';
-  
-  //console.log(book1.getAge());
-  //console.log(book2.getAge());
-  //console.log(book2.type);
-  
-  
-  //! Prototype, belirli bir Nesne'nin (Object) tum instance'larina kolay bir
-  //! sekilde metotlar tanimlamaya izin vermektedir.
-  //! Prototip alaninda bir metot tanimlamanin guzelligi bu metot'un olusan
-  //! tum instance'lerin belleginde yer kaplamamasi ancak tum instance'larin bu metota
-  //! ulasabilmesidir.
-  
-  //* Ornegin Book nesnesinin tum instance'lari getAge() fonksiyonunu miras alabilir.
-  //* Ancak, getAge() fonksiyonu bellekte sadece tek bir yer kaplamaktadir.
-  
-  //* Bir nesnenin prototiplerine .prototype ile erisilebilir.
-  //* Ancak bir instance'in prototiplerine .__proto__ ile erisilmektedir.
-  
-  
-  
-  //!Object'lerin proto alanini gormk icin .protoype
-  //console.log(Book.prototype);
-  
-  //!instance'larin proto alanini gormk icin .__proto__
-  //console.log(book1.__proto__);
+}
 
+//? new keyword'u Book Constructor'ini parametereler ile cagirmaktadir.
+//? Constructor ise Book nesnesinden bir ornek (instance) olusturmaktadir.
+//? Constructor, mantiksal bir ifade iken instance fiziksel bir olusum gibi dusunulebilir.
+//? Contructor'da tanimlanmis tum degisken ve fonksiyonlar olusturulan
+//? her bir instance'a da hayat bulmus olur.
 
-  //*========================İNHERİTANCE(KALITIM-es5)===============*
+//? instance
+const book1 = new Book('Kasagi', 'Omer Seyfettin', 1920);
+const book2 = new Book('Sinekli Bakkal', 'H.Edip Adıvar', 1910);
 
-  //* CLASSA VERİLEN PROTOTYPELAR DİĞERLERİNE DE GEÇER...
- function Magazine(title,author,year,month){
-    //* Booktan türetilmiş magazine classı almış olduk
-    /* parent'ın object constructorının çağrılması */
-    Book.call(this,title,author,year)
-    this.month=month;
- }
+console.log(book1);
+console.log(book2.getSummary());
 
- //! prototipler doğrudan miras olarak gelmez...eksikkk
- Magazine.prototype=Object.create(Book.prototype)
- const mag1=new Magazine("Scientific Research","Einstein",1905,"September")
- console.log(mag1.getAge());
-//! 
+book1.price = 100;
+console.log(book1, book2);
+
+//! Eger yeni bir property veya fonksiyonu constructor'a eklemek istersek
+//! prototype'ı kullanabiliriz.
+
+Book.prototype.getAge = function () {
+  return new Date().getFullYear() - this.year;
+};
+
+Book.prototype.type = 'novel';
+
+console.log(book1.getAge());
+console.log(book2.getAge());
+console.log(book2.type);
+
+//! Prototype, belirli bir Nesne'nin (Object) tum instance'larina
+//! kolay bir sekilde metotlar tanimlamaya izin vermektedir.
+//! Prototip alaninda bir metot tanimlamanin guzelligi bu metot'un
+//! olusan tum instance'lerin belleginde yer kaplamamasi ancak tum
+//! instance'larin bu metota ulasabilmesidir.
+
+//* Ornegin Book nesnesinin tum instance'lari getAge() fonksiyonunu miras alabilir.
+//* Ancak, getAge() fonksiyonu bellekte sadece tek bir yer kaplamaktadir.
+
+//* Bir nesnenin prototiplerine .prototype ile erisilebilir.
+//* Ancak bir instance'in prototiplerine .__proto__ ile erisilmektedir.
+
+//!Object'lerin proto alanini gormk icin .protoype
+console.log(Book.prototype);
+
+//!instance'larin proto alanini gormk icin .__proto__
+console.log(book1.__proto__);
+
+//? INHERITANCE (Kalitim - ES5)
+//?-------------------------------------------------------------------
+
+//? Sub-Class
+function Magazine(title, author, year, month) {
+  //* parent'in object constructorinin cagrilmasi
+  Book.call(this, title, author, year);
+  this.month = month;
+}
+
+//! Prototipler dogrudan miras olarak gelmez.
+console.log(Magazine.prototype);
+
+//! Prototipleri miras almak icin Object.create() metodu kullanabilir.
+Magazine.prototype = Object.create(Book.prototype);
+console.log(Magazine.prototype);
+
+//* Magazine nesnesinden bir instance olsuturulmasi
+const mag1 = new Magazine('Scientific Research', 'Einstein', 1905, 'September');
+
+console.log(mag1);
+console.log(mag1.getAge());
+
  
