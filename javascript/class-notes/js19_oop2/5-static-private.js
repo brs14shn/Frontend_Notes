@@ -26,28 +26,38 @@
 class Book {
     static counter=0;
 
+    //! private property
+    #id;
+    //private =sadece kendi classı
+    //protected=bazı kısımları
+
     constructor(title, author, year) {
       this.title = title;
       this.author = author;
       this.year = year;
+      this.#id="123456"
       Book.counter++;
     }
     getSummary() {
       return `${this.title} was written by ${this.author} in ${this.year} `;
+    }
+    static compareAge(book1,book2){
+        return `Book age difference : ${book1.year-book2.year}`
+
     }
   }
   
   //? instance
   const book1 = new Book('Kasagi', 'Omer Seyfettin', 1920);
   const book2 = new Book('Sinekli Bakkal', 'H.Edip Adıvar', 1910);
-  const book3 = new Book('Kasagi', 'Omer Seyfettin', 1920);
-  const book4 = new Book('Sinekli Bakkal', 'H.Edip Adıvar', 1910);
-  const book5 = new Book('Kasagi', 'Omer Seyfettin', 1920);
-  const book6 = new Book('Sinekli Bakkal', 'H.Edip Adıvar', 1910);
+ 
   console.log(book1);
-  console.log(book.counter); //undefined
-  //? statik degiskenlere instancelar üzerinden erisilemez.
-
+  //console.log(book.counter); //undefined
+  //TODO: Statik degiskenlere instancelar üzerinden erisilemez.
   console.log(Book.counter);
+  console.log(Book.compareAge(book1,book2))
   
+  //* -------------private-----------------------------
+  console.log(book1.#id); //: Private field '#id' must be declared
+  //* private değişkenlere class dışından doğrudan erişilemez
   
