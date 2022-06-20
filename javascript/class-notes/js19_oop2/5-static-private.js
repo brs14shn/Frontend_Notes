@@ -40,6 +40,14 @@ class Book {
   //? instance
   const book1 = new Book('Kasagi', 'Omer Seyfettin', 1920);
   const book2 = new Book('Sinekli Bakkal', 'H.Edip Adıvar', 1910);
+  const book3 = new Book('Kasagi', 'Omer Seyfettin', 1920);
+  const book4 = new Book('Sinekli Bakkal', 'H.Edip Adıvar', 1910);
+  const book5 = new Book('Kasagi', 'Omer Seyfettin', 1920);
+  const book6 = new Book('Sinekli Bakkal', 'H.Edip Adıvar', 1910);
   console.log(book1);
+  console.log(book.counter); //undefined
+  //? statik degiskenlere instancelar üzerinden erisilemez.
+
+  console.log(Book.counter);
   
   
