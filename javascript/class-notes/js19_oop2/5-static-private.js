@@ -24,10 +24,13 @@
 //! Private metotlara ancak class icerisindeki diger metotlar ile erisilebiler.
 
 class Book {
+    static counter=0;
+
     constructor(title, author, year) {
       this.title = title;
       this.author = author;
       this.year = year;
+      Book.counter++;
     }
     getSummary() {
       return `${this.title} was written by ${this.author} in ${this.year} `;
@@ -39,18 +42,4 @@ class Book {
   const book2 = new Book('Sinekli Bakkal', 'H.Edip Adıvar', 1910);
   console.log(book1);
   
-  //? Sub-Class tanimlamasi
-  class Magazine extends Book {
-    constructor(title, author, year, month) {
-      super(title, author, year);
-      this.month = month;
-    }
-  }
   
-  const mag1 = new Magazine('Kasagi', 'Omer Seyfettin', 1940, 'Nov');
-  console.log(mag1);
-  console.log(mag1.getSummary());
-  // mag1.setPrice(100, 1.2);
-  mag1.setPriceParent(100);
-  
-  console.log(mag1);
