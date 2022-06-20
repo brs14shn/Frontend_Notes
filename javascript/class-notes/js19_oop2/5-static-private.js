@@ -24,40 +24,70 @@
 //! Private metotlara ancak class icerisindeki diger metotlar ile erisilebiler.
 
 class Book {
-    static counter=0;
-
+    //? static property
+    static counter = 0;
+  
     //! private property
     #id;
-    //private =sadece kendi classı
-    //protected=bazı kısımları
-
+  
     constructor(title, author, year) {
       this.title = title;
       this.author = author;
       this.year = year;
-      this.#id="123456"
-      Book.counter++;
+  
+      //? Static degiskenin degeri bir arttirliyor.
+      Book.counter++; //? Classname.propertyName
+  
+      //! private prorety  deger atanmasi
+      this.#id = '123456';
     }
     getSummary() {
-      return `${this.title} was written by ${this.author} in ${this.year} `;
+      return `${this.title} was written by ${this.author} in ${
+        this.year
+      } so it is age ${this.#computeAge()} `;
     }
-    static compareAge(book1,book2){
-        return `Book age difference : ${book1.year-book2.year}`
-
+    //? static method
+    static compareAge(b1, b2) {
+      return `Books age diffrence: ${b1.year - b2.year}`;
+    }
+  
+    //! private id'yi okumak icin getter metodu
+    getId() {
+      return this.#id;
+    }
+    //! private id'yi degisttiren setter metodu
+    setId(id) {
+      this.#id = id;
+    }
+  
+    //! Private metot
+    #computeAge() {
+      return new Date().getFullYear() - this.year;
     }
   }
   
   //? instance
   const book1 = new Book('Kasagi', 'Omer Seyfettin', 1920);
   const book2 = new Book('Sinekli Bakkal', 'H.Edip Adıvar', 1910);
- 
-  console.log(book1);
-  //console.log(book.counter); //undefined
-  //TODO: Statik degiskenlere instancelar üzerinden erisilemez.
-  console.log(Book.counter);
-  console.log(Book.compareAge(book1,book2))
+  const book3 = new Book('Sinekli Bakkal', 'H.Edip Adıvar', 1910);
   
-  //* -------------private-----------------------------
-  console.log(book1.#id); //: Private field '#id' must be declared
-  //* private değişkenlere class dışından doğrudan erişilemez
+  //? STATIC
+  console.log(Book.counter); //! 3
+  console.log(book1.counter); //! undefined
+  console.log(Book.compareAge(book1, book3));
   
+  //! PRIVATE
+  
+  //! private degisklenlere class disindan dogurudan erisilemez
+  // console.log(book1.#id);
+  // book1.#id = '4321';
+  
+  console.log(book1.getId());
+  book1.setId('43210');
+  console.log(book1.getId());
+  
+  //! Private metotlar class disraisindan cagirlamazlar.
+  //! Sadece class icerisindeki metotlar taradindan  cagirlabilirler
+  // console.log(book1.#computeAge());
+  
+  console.log(book1.getSummary());
