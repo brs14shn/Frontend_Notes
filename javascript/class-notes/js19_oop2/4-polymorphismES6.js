@@ -4,7 +4,7 @@
 
 //* Polymorphism, bir degisken, fonksiyon veya nesnenin çoklu sekiller
 //* alabilmesini tanimlayan bir nesne-yonelimli programlama teknigidir.
-//* Polymorphism, genellikle Overloading ve Overriding gibi alt kavramlar
+//* Polymorphism, genellikle Overloading ve Overriding(Parentın bir fonksiyonu ezilir) gibi alt kavramlar
 //* ile bilinir.
 
 class Book {
@@ -30,7 +30,13 @@ class Magazine extends Book {
     super(title, author, year); //! Book'un prototpye kopyalnmis oldu
     this.month = month;
   }
+  //! overrided 
+  getSummary(){
+    return `${this.title} was written by ${this.author} in ${this.year} in ${this.month} `;
+
+  }
 }
 
 const mag1 = new Magazine('Kasagi', 'Omer Seyfettin', 1940, 'Nov');
 console.log(mag1);
+console.log(mag1.getSummary());//* kalıtım olduğundan gelir
