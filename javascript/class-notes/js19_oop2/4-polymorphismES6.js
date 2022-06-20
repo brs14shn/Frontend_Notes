@@ -1,10 +1,10 @@
 //* ======================================================
-//*     OOP -  Polymorphism(ES6)
+//*        OOP -  Polymorphism(ES6)
 //* ======================================================
 
 //* Polymorphism, bir degisken, fonksiyon veya nesnenin çoklu sekiller
 //* alabilmesini tanimlayan bir nesne-yonelimli programlama teknigidir.
-//* Polymorphism, genellikle Overloading ve Overriding(Parentın bir fonksiyonu ezilir) gibi alt kavramlar
+//* Polymorphism, genellikle Overloading ve Overriding gibi alt kavramlar
 //* ile bilinir.
 
 class Book {
@@ -14,13 +14,13 @@ class Book {
     this.year = year;
   }
   getSummary() {
-    return `${this.title} was written by ${this.author} in ${this.year} `};
-  setPrice(price){
-      const taxRate=1.1;
-      this.price=(price*taxRate).toFixed(2)
-    }
+    return `${this.title} was written by ${this.author} in ${this.year} `;
   }
-
+  setPrice(price) {
+    const taxRate = 1.1;
+    this.price = (price * taxRate).toFixed(2);
+  }
+}
 
 //? instance
 const book1 = new Book('Kasagi', 'Omer Seyfettin', 1920);
@@ -34,20 +34,28 @@ class Magazine extends Book {
     super(title, author, year); //! Book'un prototpye kopyalnmis oldu
     this.month = month;
   }
-  //! overrided 
-  getSummary(){
-    return `${this.title} was written by ${this.author} in ${this.year} in ${this.month} `;
 
+  //! Overrided Metot (Parent class'daki bir metodun farkli
+  //! fonksiyonellikle fakat ayni isimle tanimlanmasi)
+  getSummary() {
+    return `${this.title} was written by ${this.author} in ${this.year} in ${this.month} `;
   }
-  setPrice(price,taxRate){
-   //! parametre sayılarının farklı olması 
-    this.price=(price*taxRate).toFixed(2)
+
+  //! Overloaded Metot (Ayni metodun farkli parametreler ile kullanilmasi)
+  setPrice(price, taxRate) {
+    this.price = (price * taxRate).toFixed(2);
+  }
+
+  //!Override edilmis bir parent fonksiyonunu kullanmak icin super keyword'u kullanilabilr.
+  setPriceParent(price) {
+    super.setPrice(price);
   }
 }
 
 const mag1 = new Magazine('Kasagi', 'Omer Seyfettin', 1940, 'Nov');
 console.log(mag1);
-console.log(mag1.getSummary());//* kalıtım olduğundan gelir
-console.log(mag1.setPrice())
-mag1.setPrice(100,1.2);
+console.log(mag1.getSummary());
+// mag1.setPrice(100, 1.2);
+mag1.setPriceParent(100);
+
 console.log(mag1);
