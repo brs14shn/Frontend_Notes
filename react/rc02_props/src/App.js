@@ -1,5 +1,7 @@
 import Person from './Person';
 
+//* =======propslar yukarıdan aşağıya doğru çalışır===*
+
 function App() {
   return (
     <>
