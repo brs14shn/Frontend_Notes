@@ -25,4 +25,4 @@ const setTime = () => {
   ReactDOM.render(reactElement, document.querySelector('.container-2'));
 };
 
-setInterval(setTime, 1000);
+setInterval(setTime, 2000);
