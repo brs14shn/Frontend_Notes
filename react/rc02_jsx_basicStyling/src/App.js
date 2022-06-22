@@ -2,6 +2,12 @@
 //? React,JSX kullanmaktadir.
 //? JSX'de, HTMl elementleri dogrudan JS icerisinde kullanilabilir
 
+import Content from "./Content";
+import Footer from "./Footer";
+import Header from "./Header";
+
+
+
 //! Componentler, HTML,CSS ve JS kodlarindan meydana gelmiş
 //! bir kod parcacigidir.
 
@@ -21,8 +27,13 @@
 function App() {
   return (
     //? return içinde JSX kullanılır.COMPONENTLER RETURN İŞLEVİ VARDIR
+     //? stillendirme yapilmayacaksa container icin <> kullanilabilir
     <div>
-      <h1>APP</h1>
+      <Header/>
+      <Content/>
+      <Footer/>
+     
+     
     </div>
   );
 }
