@@ -4,8 +4,8 @@ import "./Buton.css";
 
 const Buton = ({btnName}) => {
   return (
-    <div>
-        <button>{btnName}</button>
+    <div className="title" >
+        <button className="btn-blue">{btnName}</button>
     </div>
   )
 }
