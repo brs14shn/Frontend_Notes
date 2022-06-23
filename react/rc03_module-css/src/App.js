@@ -7,12 +7,12 @@ function App() {
   console.log(data);
   return (
     <>
-    {data.map((item)=>{
-      console.log(item);
+    {data.map((item)=>{  //* id yoksa index kullanın!!!
+      // console.log(item);
       const {id,img,btnName,dil} =item;
       return(
         <Card 
-        id={id}
+        key={id}
         img={img}
         btnName={btnName}
         dil={dil}

@@ -2,9 +2,11 @@
 
 import "./Buton.css";
 
-const Buton = () => {
+const Buton = ({btnName}) => {
   return (
-    <div>Buton</div>
+    <div>
+        <button>{btnName}</button>
+    </div>
   )
 }
 
