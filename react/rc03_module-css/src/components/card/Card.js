@@ -5,8 +5,8 @@ import "./Card.css";
 const Card = ({img,btnName,dil}) => {
   return (
     <div>
-       <h1>{dil}</h1>
-       <img src={img} alt="" />
+       <h1 className="title">{dil}</h1>
+       <img className="images" src={img} alt="" />
         <Buton btnName={btnName}/>
     </div>
   
