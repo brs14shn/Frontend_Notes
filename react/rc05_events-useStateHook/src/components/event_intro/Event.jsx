@@ -13,7 +13,9 @@
 
 const Event = () => {
   return (
-    <div>Event</div>
+    <div>
+        <button className="btn btn-warning">Click</button>
+    </div>
   )
 }
 

@@ -1,7 +1,12 @@
+import Event from "./components/event_intro/Event";
+
+
+
+
 function App() {
   return (
     <div>
-     <h1>Event Handler</h1>
+     <Event/>
     </div>
   );
 }
