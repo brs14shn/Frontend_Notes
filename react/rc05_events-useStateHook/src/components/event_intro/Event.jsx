@@ -28,7 +28,7 @@ const Event = () => {
         console.log(info)
         //* Dom basmıyor ancak console da gözüküyor
         //* React statik olarak görür
-        console.log(e);
+        console.log(e.target);
 
      }
     return (
