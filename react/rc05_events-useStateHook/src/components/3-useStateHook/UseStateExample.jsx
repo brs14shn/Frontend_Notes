@@ -21,7 +21,21 @@
 import { useState } from "react";
 
 const UseStateExample = () => {
-  return <div>UseStateExample</div>;
+
+  const [count,setCount] =useState(0);
+  //* count==>değişken
+  //* setcount=>Func
+
+  return (
+    <div className="container text-center mt-4">
+        <h1 className="display-4 text-danger m-4">USESTATE COUNT:</h1>
+        <button  className="btn btn-success ms-3">
+          INC
+        </button>
+        <button className="btn btn-danger ms-3">CLR</button>
+        <button  className="btn btn-warning ms-3">DEC</button>
+      </div>
+  )
 };
 
 export default UseStateExample;
