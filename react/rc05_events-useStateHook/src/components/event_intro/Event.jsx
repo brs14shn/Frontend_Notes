@@ -23,11 +23,12 @@ const Event = () => {
 
      }
 
-     const handleChange=()=>{
+     const handleChange=(e)=>{
         info="HOOKS"
         console.log(info)
         //* Dom basmıyor ancak console da gözüküyor
         //* React statik olarak görür
+        console.log(e);
 
      }
     return (
@@ -40,7 +41,7 @@ const Event = () => {
       takdirde event fonksiyonu event gerceklesmeden cagirilir */}
         <button onClick={()=>handleClear("Clear buton pressed")} className="btn btn-dark ms-3">Clear</button>
 
-        <button onClick={handleChange} className="btn btn-primary ms-3">Change</button>
+        <button onClick={(e)=>handleChange(e)} className="btn btn-primary ms-3">Change</button>
         
     </div>
   )
