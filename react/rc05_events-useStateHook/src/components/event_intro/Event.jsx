@@ -20,7 +20,6 @@ const Event = () => {
      }
      const handleClear=(text)=>{
         alert(text)
-
      }
 
      const handleChange=(e)=>{
@@ -31,6 +30,8 @@ const Event = () => {
         console.log(e.target);
 
      }
+
+   
     return (
     <div className="container text-center mt-4">
         <div className="display-4 text-danger m-4">{info}</div>
