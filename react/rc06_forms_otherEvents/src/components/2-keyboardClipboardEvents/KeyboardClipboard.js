@@ -38,7 +38,7 @@ const KeyboardClipboard = () => {
         type="text"
         value={inputValue}
       />
-      <p onCopy={()=>alert("Dikkat kopyalandı")} className="text-start m-4">{inputValue} </p>
+      <p  style={{userselect:"none"}} onCopy={()=>alert("Dikkat kopyalandı")} className="text-start m-4">{inputValue} </p>
       <textarea
         name="area"
         id="area"
