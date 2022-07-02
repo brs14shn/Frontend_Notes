@@ -1,5 +1,6 @@
 import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
+import EditTutorilas from "./EditTutorilas";
 
 const TutorialList = ({ tutorials, deleteTutorial, editTutorial }) => {
   //? Test data
@@ -39,6 +40,8 @@ const TutorialList = ({ tutorials, deleteTutorial, editTutorial }) => {
                 <td>{description}</td>
                 <td className="text-center">
                   <FaEdit
+                    data-bs-toggle="modal"
+                    data-bs-target="#edit-modal"
                     // role={button}
                     size={20}
                     className="me-3 text-warning cursor-pointer "
@@ -55,6 +58,7 @@ const TutorialList = ({ tutorials, deleteTutorial, editTutorial }) => {
           })}
         </tbody>
       </table>
+      <EditTutorilas />
     </div>
   );
 };
