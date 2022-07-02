@@ -38,14 +38,38 @@ const Home = () => {
     }
     getTutorials();
   };
-  console.log(tutorials);
+  // console.log(tutorials);
 
-  // getTutorials();
+  const deleteTutorial = async (id) => {
+    try {
+      await axios.delete(`${url}/${id}`);
+    } catch (err) {
+      console.log(err);
+    }
+    getTutorials();
+  };
+
+  const editTutorial = async (id, title, desc) => {
+    const filtered = tutorials.filter((tutor) => {
+      return tutor.id === id;
+    });
+    console.log(filtered);
+    try {
+      await axios.put(`${url}/${id}`);
+    } catch (err) {
+      console.log(err);
+    }
+    getTutorials();
+  };
 
   return (
     <>
       <AddTutorial addTutorial={addTutorial} />
-      <TutorialList tutorials={tutorials} />
+      <TutorialList
+        tutorials={tutorials}
+        deleteTutorial={deleteTutorial}
+        editTutorial={editTutorial}
+      />
     </>
   );
 };
