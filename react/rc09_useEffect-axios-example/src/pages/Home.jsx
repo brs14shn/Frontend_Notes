@@ -76,3 +76,14 @@ const Home = () => {
 };
 
 export default Home;
+
+//* ======================SUMMARY=====================
+//TODO (1) - İlk olarak home pages API den verimizi çekip parent vasıtasıyla chidlere göndermemiz gerekecektir.APİ den gelecek tutorlist TutorList componentine gönderilecektir.
+
+//? (2) - TutorList comp home gelen datayı props olarak alacak ve kullanacaktır
+
+//! (3) - AddTutor veri ekleyip submit ettiğimizde bunun TutorList görünmesi için sürekli refresh yapmak gerekecektir.
+
+//* (4) - Bunun önlemek global state kullanılabilir global state yardımıyla veri Add componentinden home pages gidecek state güncellenecek haliyle props güncelliğinden TutorList te güncellencektir.
+
+//TODO (5) Global state kullanmıyorsak ortak olanları parent ten child göndeririz.Ancak props dışında parentte bir function da childlara gönderilir.Böylece child veri güncellediğinden veya gönderildiğinden fonksiyon yardımıyla parentte güncellenmiş olacaktır.
