@@ -1,15 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const EditTutorilas = ({ EditTutorilas, edited }) => {
-  const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
+const EditTutorial = ({ editTutorial, edited }) => {
+  console.log(edited);
+  const { id, title: newTitle, description } = edited;
 
-  const handlesave = (e) => {
+  console.log(edited.id);
+
+  const [title, setTitle] = useState(newTitle);
+  const [desc, setDesc] = useState(description);
+
+  //? https://reactjs.org/docs/hooks-reference.html#usestate
+  //! State degiskeninin degeri, 1.render ile initialState
+  //! parametresinin ilk degerini alir. Dolayisiyle bu durumda
+  //! prop'tan gelen ilk deger state'e aktarilir.
+  //! Sonradan degisen props degerleri useState'e aktarilmaz.
+  //! Eger props'tan gelen degerleri her degisimde useState'e
+  //! aktarmak istersek useEffect hook'unu componentDidUpdate
+  //! gibi kullanabiriz.
+
+  useEffect(() => {
+    setTitle(newTitle);
+    setDesc(description);
+  }, [newTitle, description]);
+
+  const handleSave = (e) => {
     e.preventDefault();
-    EditTutorilas({ title: title, desription: desc });
+    editTutorial(id, title, desc);
     setTitle("");
     setDesc("");
   };
+
   return (
     <div className="modal" tabIndex="-1" id="edit-modal">
       <div className="modal-dialog">
@@ -47,7 +67,7 @@ const EditTutorilas = ({ EditTutorilas, edited }) => {
                 className="form-control"
                 id="desc"
                 placeholder="Enter your Description"
-                value={desc}
+                value={desc || ""}
                 onChange={(e) => setDesc(e.target.value)}
                 required
               />
@@ -55,10 +75,11 @@ const EditTutorilas = ({ EditTutorilas, edited }) => {
           </div>
           <div className="modal-footer">
             <button
-              onClick={handlesave}
               type="button"
               className="btn btn-primary"
+              onClick={handleSave}
               data-bs-dismiss="modal"
+              //! en altta olmalı
             >
               Save
             </button>
@@ -69,4 +90,4 @@ const EditTutorilas = ({ EditTutorilas, edited }) => {
   );
 };
 
-export default EditTutorilas;
+export default EditTutorial;

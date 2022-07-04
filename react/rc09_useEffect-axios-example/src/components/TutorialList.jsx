@@ -4,7 +4,8 @@ import EditTutorilas from "./EditTutorilas";
 import { useState } from "react";
 
 const TutorialList = ({ tutorials, deleteTutorial, editTutorial }) => {
-  const [edited, setEdited] = useState();
+  const [edited, setEdited] = useState("");
+  //! boş olarak atarsan id undefined olur
   //? Test data
   // let tutorials = [
   //   {
