@@ -79,6 +79,7 @@ const EditTutorial = ({ editTutorial, edited }) => {
               className="btn btn-primary"
               onClick={handleSave}
               data-bs-dismiss="modal"
+
               //! en altta olmalı
             >
               Save

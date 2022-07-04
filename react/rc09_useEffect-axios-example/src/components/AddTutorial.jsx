@@ -9,6 +9,7 @@ const AddTutorial = ({ addTutorial }) => {
     addTutorial({ title: title, description: desc });
     setTitle("");
     setDesc("");
+    // e.target.reset();
   };
 
   return (
