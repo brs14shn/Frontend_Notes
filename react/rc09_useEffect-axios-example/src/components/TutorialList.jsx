@@ -66,3 +66,5 @@ const TutorialList = ({ tutorials, deleteTutorial, editTutorial }) => {
 };
 
 export default TutorialList;
+//* editte tutorlist title desc bilgileri gerekli olduğundan state
+//*(edited)tanımlayarak editte gönderdik

@@ -4,7 +4,7 @@ const EditTutorilas = ({ EditTutorilas, edited }) => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
 
-  const handleSubmit = (e) => {
+  const handlesave = (e) => {
     e.preventDefault();
     EditTutorilas({ title: title, desription: desc });
     setTitle("");
@@ -55,6 +55,7 @@ const EditTutorilas = ({ EditTutorilas, edited }) => {
           </div>
           <div className="modal-footer">
             <button
+              onClick={handlesave}
               type="button"
               className="btn btn-primary"
               data-bs-dismiss="modal"
