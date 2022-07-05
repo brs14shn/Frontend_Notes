@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledHeader = styled.header`
   background-color: ${({ theme }) => theme.colors.header};
-  padding: 4rem 0;
+  padding: 1rem 0;
 `;
 
 export const Logo = styled.img`
@@ -17,7 +17,7 @@ export const Nav = styled.nav`
 `;
 
 export const Image = styled.img`
-  width: 400px;
+  width: 350px;
 `;
 
 export default StyledHeader;
