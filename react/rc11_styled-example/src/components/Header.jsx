@@ -1,5 +1,6 @@
 import Button from "./styles/Button.styled";
 import StyledHeader from "./styles/Header.styled";
+// import img2 from "../images/logo_white.png";
 
 const Header = () => {
   return (
