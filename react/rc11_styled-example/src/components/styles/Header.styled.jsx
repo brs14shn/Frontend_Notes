@@ -16,4 +16,8 @@ export const Nav = styled.nav`
   justify-content: space-between;
 `;
 
+export const Image = styled.img`
+  width: 400px;
+`;
+
 export default StyledHeader;
