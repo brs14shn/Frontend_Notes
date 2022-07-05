@@ -1,16 +1,13 @@
-import Button from "./components/Button.styled";
-
-
+import Button, { TomatoButton } from './components/Button.styled';
 
 const App = () => {
   return (
     <>
-
-<Button primary>CLİCK</Button>
-<Button >CLİCK</Button>
+      <Button primary>Click</Button>
+      <Button>Click</Button>
+      <TomatoButton primary>Click</TomatoButton>
     </>
-    
-  )
+  );
 };
 
 export default App;
