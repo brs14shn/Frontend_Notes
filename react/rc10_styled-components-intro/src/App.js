@@ -15,6 +15,7 @@ const App = () => {
         <HeaderText color="white">STYLED COMPONENTS</HeaderText>
 
         <StyledLink secondary href="https://clarusway.com/" target="_blank">
+          
           Clarusway
         </StyledLink>
       </Container>
