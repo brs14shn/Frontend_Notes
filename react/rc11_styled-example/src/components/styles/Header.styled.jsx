@@ -5,4 +5,9 @@ const StyledHeader = styled.header`
   padding: 4rem 0;
 `;
 
+export const Logo = styled.img`
+  width: 300px;
+  padding: 4rem 0;
+`;
+
 export default StyledHeader;
