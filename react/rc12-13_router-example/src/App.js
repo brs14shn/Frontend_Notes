@@ -3,8 +3,10 @@ import Nav from './components/Nav';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import Instructors from './pages/Instructors';
+import InstructorDetail from "./pages/InstructorDetail"
 import NotFound from './pages/NotFound';
 import {BrowserRouter,Routes,Route} from "react-router-dom"
+
 function App() {
   return (
     <>
@@ -13,6 +15,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/instructors" element={<Instructors />}/>
+      <Route path="/instructors/:id" element={<InstructorDetail />}/>
       <Route path="/contact" element={<Contact />}/>
       <Route path="*" element={<NotFound />}/>
       </Routes>
