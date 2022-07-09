@@ -10,6 +10,7 @@ import { Navigate } from 'react-router-dom';
 import Paths from './pages/Paths';
 import FullStack from './pages/FullStack';
 import Aws from './pages/Aws';
+import PrivateRouter from "./pages/PrivateRouter"
 function App() {
   return (
     <>
@@ -24,9 +25,11 @@ function App() {
             <Route index element={<FullStack/>} />
             <Route path="fullstack" element={<FullStack/>} />
             <Route path="aws" element={<Aws />} />
-
           </Route>
+
+          <Route path="/contact" element={<PrivateRouter/>} >
           <Route path="/contact" element={<Contact />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
@@ -36,3 +39,18 @@ function App() {
 }
 
 export default App;
+
+//* İc ice sayfalari gsotermek icin Nested Route kullanilabilir.
+
+//? Link, NavLink ve Navigate componentleri declerative routing
+//? gerceklestirmek icin kullanilir.
+//? Ornegin: Link ve NavLink Sayfada gorulebilen, kullanciyla
+//? bir etkilesim icerisinde bulunarak yonledirme yapılan bir
+//? componentlerdir. (Nav v.b)
+
+//? Navigate sayfada gorulmeyen ve programsal olarak bir linkin
+//? bir baska linke yonledirmesi icin kullanilir. (v5 -> Redirect)
+
+//* useNavigate() ise imperative routing icin elverislidir.
+//* Ornegin bir fonksiyon,event veye UseEffect icerisinde programsal
+//* olarak yonledirme yapmak icin kullanilabilir
