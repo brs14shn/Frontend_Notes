@@ -1,13 +1,18 @@
 import { useState } from 'react';
 import StudentList from './components/StudentList';
 import data from './data';
+import { StudentContext } from './context/StudentContext';
 
 function App() {
   const [students, setStudents] = useState(data);
-
+  
+  
   return (
     <div>
-      <StudentList students={students} />
+      {/* <StudentList students={students} /> */}
+      <StudentContext.Provider value={{students}}>
+        <StudentList/>
+      </StudentContext.Provider>
     </div>
   );
 }

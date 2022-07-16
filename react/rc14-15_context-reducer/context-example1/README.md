@@ -28,3 +28,13 @@ ReactDOM.render(
   document.getElementById("root")
 );
 ```
+## Dezavantajları
+
+*Global state olduğundan re-render işlemine sebeb olur
+*Component yapısını bozuyor.
+
+## consume(use) =>tüketmek
+
+import {useState} from "react";
+import StudentContext from "file.path"
+const {state} =useContext(StudentContext)
