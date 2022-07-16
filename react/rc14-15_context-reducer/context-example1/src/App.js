@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       {/* <StudentList students={students} /> */}
-      <StudentContext.Provider value={{students}}>
+      <StudentContext.Provider value={{students ,setStudents}}>
         <StudentList/>
       </StudentContext.Provider>
     </div>

@@ -3,7 +3,7 @@ import { StudentContext } from '../context/StudentContext';
 import StudentItem from './StudentItem';
 
 const StudentList = () => {
-
+  //! Context student verisi aldık
   const {students} =useContext(StudentContext);
   console.log(students);
   return (
