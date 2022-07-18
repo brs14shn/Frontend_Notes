@@ -1,4 +1,4 @@
-import { Typography, Container } from "@mui/material";
+import { Typography, Container, Button } from "@mui/material";
 
 // import Typography from '@mui/material/Typography';
 // // or
@@ -56,6 +56,20 @@ const TypoButtons = () => {
           eos impedit illo quam earum molestiae magni reprehenderit laboriosam
           libero ipsum.
         </Typography>
+      </Container>
+      <Container maxWidth="md">
+        <Button variant="contained" color="secondary">
+          CLİCK
+        </Button>
+        <Button variant="outlined" color="success">
+          SEND
+        </Button>
+        <Button variant="contained" disabled>
+          Disabled
+        </Button>
+        <Button variant="contained" href="https://clarusway.com">
+          Link
+        </Button>
       </Container>
     </div>
   );
