@@ -67,6 +67,7 @@ const TypoButtons = () => {
       </Container>
 
       <Container maxWidth="md">
+        {/* box stillendirilmiş div 👇 */}
         <Box
           sx={{
             display: "flex",
