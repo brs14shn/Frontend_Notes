@@ -22,8 +22,38 @@ const TypoButtons = () => {
       >
         Typography,Buttons,Container,Box
       </Typography>
-      <Typography variant="h6" component="h1" align="justify" color="error">
+      <Typography
+        sx={{ bgcolor: "blue", border: "3px solid black" }}
+        variant="h6"
+        component="h1"
+        align="justify"
+        color="secondary"
+      >
         Typography,Buttons,Container,Box
+      </Typography>
+      <Typography
+        variant="h6"
+        component="h1"
+        align="justify"
+        color="secondary.dark"
+        sx={{ background: "gray", mt: 5 }} //! inline styling
+      >
+        Typography,Buttons,Container,Box
+      </Typography>
+      <Typography variant="body1" align="justify">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque eos
+        impedit illo quam earum molestiae magni reprehenderit laboriosam libero
+        ipsum.
+      </Typography>
+
+      <Typography
+        variant="button"
+        align="justify"
+        sx={{ display: "inline-block", mt: 4 }}
+      >
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque eos
+        impedit illo quam earum molestiae magni reprehenderit laboriosam libero
+        ipsum.
       </Typography>
     </div>
   );
@@ -32,3 +62,7 @@ const TypoButtons = () => {
 export default TypoButtons;
 
 //* görüntü olarak h5 ama styled olarak h1 olarak
+
+//* bodyler p tagı oluyor
+
+//* button spam
