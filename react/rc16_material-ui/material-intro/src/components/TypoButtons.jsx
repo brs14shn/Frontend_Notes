@@ -1,4 +1,7 @@
 import { Typography, Container, Button } from "@mui/material";
+import { Box } from "@mui/system";
+import DeleteIcon from "@mui/icons-material/Delete";
+import SendIcon from "@mui/icons-material/Send";
 
 // import Typography from '@mui/material/Typography';
 // // or
@@ -6,7 +9,9 @@ import { Typography, Container, Button } from "@mui/material";
 const TypoButtons = () => {
   return (
     <div>
+      {/* Container, 👇 sağdan soldan default margin veriyor */}
       <Container maxWidth="md">
+        {/* Bu container'ın maxWidh'i md'ye kadar olsun 👆 */}
         <Typography
           variant="subtitle"
           component="h1"
@@ -24,6 +29,7 @@ const TypoButtons = () => {
           Typography,Buttons,Container,Box
         </Typography>
         <Typography
+          //! sx prop'uyla çift süslü içinde inline styling verebiliyoruz 👇
           sx={{ bgcolor: "blue", border: "3px solid black" }}
           variant="h6"
           component="h1"
@@ -41,6 +47,7 @@ const TypoButtons = () => {
         >
           Typography,Buttons,Container,Box
         </Typography>
+        {/* body1, p elementi oluşturdu 👇 */}
         <Typography variant="body1" align="justify">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque
           eos impedit illo quam earum molestiae magni reprehenderit laboriosam
@@ -52,24 +59,37 @@ const TypoButtons = () => {
           align="justify"
           sx={{ display: "inline-block", mt: 4 }}
         >
+          {/* button, span elementi oluşturdu 👇 */}
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque
           eos impedit illo quam earum molestiae magni reprehenderit laboriosam
           libero ipsum.
         </Typography>
       </Container>
+
       <Container maxWidth="md">
-        <Button variant="contained" color="secondary">
-          CLİCK
-        </Button>
-        <Button variant="outlined" color="success">
-          SEND
-        </Button>
-        <Button variant="contained" disabled>
-          Disabled
-        </Button>
-        <Button variant="contained" href="https://clarusway.com">
-          Link
-        </Button>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            // alignItems: "center",
+            justifyContent: "center",
+            gap: 2,
+            mt: 4,
+          }}
+        >
+          <Button variant="contained" color="secondary">
+            CLİCK
+          </Button>
+          <Button variant="outlined" color="success" startIcon={<SendIcon />}>
+            SEND
+          </Button>
+          <Button variant="contained" disabled endIcon={<DeleteIcon />}>
+            DELETE
+          </Button>
+          <Button variant="contained" href="https://clarusway.com">
+            Link
+          </Button>
+        </Box>
       </Container>
     </div>
   );
