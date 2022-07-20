@@ -38,3 +38,10 @@ ReactDOM.render(
 import {useState} from "react";
 import StudentContext from "file.path"
 const {state} =useContext(StudentContext)
+
+
+## context Api steps:
+1- createContext
+2-Provider genellikle App uygun olur
+3-ilgili componentslerde consume yaparız veri global state olur
+4-consume için useContext hooku kullanılır.

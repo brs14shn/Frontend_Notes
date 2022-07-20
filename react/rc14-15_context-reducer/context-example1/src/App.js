@@ -11,6 +11,7 @@ function App() {
     <div>
       {/* <StudentList students={students} /> */}
       <StudentContext.Provider value={{students ,setStudents}}>
+        {/* {value çift parantez olmalı} */}
         <StudentList/>
       </StudentContext.Provider>
     </div>
