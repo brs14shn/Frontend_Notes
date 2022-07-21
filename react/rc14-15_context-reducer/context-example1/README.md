@@ -13,7 +13,7 @@ In this case, we need to pass state from the top level of the application throug
 
 ## Create Context
 
-````
+```
 //index.js
 import React from "react";
 import ReactDOM from "react-dom";
@@ -28,19 +28,20 @@ ReactDOM.render(
   document.getElementById("root")
 );
 ```
+
 ## Dezavantajları
 
 *Global state olduğundan re-render işlemine sebeb olur
 *Component yapısını bozuyor.
 
-## consume(use) =>tüketmek
+## Consume(use) =>tüketmek
+consume için useContext hooku kullanılır.
 
 import {useState} from "react";
 import StudentContext from "file.path"
 const {state} =useContext(StudentContext)
 
-
-## context Api steps:
+## Context Api steps:
 1- createContext
 2-Provider genellikle App uygun olur
 3-ilgili componentslerde consume yaparız veri global state olur

@@ -12,6 +12,8 @@ export const useUserContext = () => {
 
 //? 2- Provider Component
 const UserContextProvider = ({ children }) => {
+  //* Her componentin children props vardır.
+
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -26,6 +28,8 @@ const UserContextProvider = ({ children }) => {
     );
   };
   const values = { users, changeWidth };
+
+  //! Childlara gönderilecek (☝️) değişken sayılar birden fazla ise object kullanılır.
 
   return <UserContext.Provider value={values}>{children}</UserContext.Provider>;
 };

@@ -4,6 +4,8 @@ import { useUserContext } from '../context/UserContextProvide';
 const ShowUsers = () => {
 
   const {users} =useUserContext()
+  //! custom hook ile yapıldığından fonksiyon yeterli
+  //? yoksa const const {users} =useContext(UserContext); ile de yapılabilirdi...
   
   return (
     <div>
