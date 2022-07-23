@@ -5,7 +5,7 @@ const initilaState = {
 };
 
 //? createSlice, Redux state lojiğini kisa yoldan tanimlamak icin kullanilan bir metotdur.
-//? slice ismi, state'lerin baslangic degerleri ve reducer'lar key-value yapisi seklinde tanimlanir.
+//? slice ismi, state'lerin baslangic degerleri ve reducer'lar key-value yapisi seklinde tanımlar.
 //? reducer, state'i degistiren fonksiyonlarin yaninda otomatik olarak action type'larin tanimlanmasini da saglar.
 
 const authSlice = createSlice({
@@ -20,3 +20,7 @@ const authSlice = createSlice({
     },
   },
 });
+
+export const { setUser, clearUser } = authSlice.actions;
+
+export default authSlice.reducer;
