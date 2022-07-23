@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 export default function Navbar() {
   const navigate = useNavigate();
   const user = useSelector((state) => state.auth.user);
+  // console.log(user);
   //*====================OR===================
   // const {user} = useSelector(state=>state.auth)
 

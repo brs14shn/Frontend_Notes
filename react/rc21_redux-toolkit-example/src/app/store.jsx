@@ -7,4 +7,7 @@ export const store = configureStore({
     auth: authReducer,
     news: newReducer,
   },
+  //   devTools: true=default/false,
+  // Redux state grafik olarak görmemizi sağlanan GUI
+  devTools: process.env.NODE_ENV !== "production",
 });
