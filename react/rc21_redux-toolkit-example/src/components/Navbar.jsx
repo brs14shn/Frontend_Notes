@@ -33,7 +33,7 @@ export default function Navbar() {
             sx={{ flexGrow: 1, cursor: "pointer" }}
             onClick={() => navigate("/login")}
           >
-            Clarusway News
+            Turkish News
           </Typography>
 
           {user ? (
