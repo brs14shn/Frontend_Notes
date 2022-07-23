@@ -9,5 +9,5 @@ export const store = configureStore({
   },
   //   devTools: true=default/false,
   // Redux state grafik olarak görmemizi sağlanan GUI
-  devTools: process.env.NODE_ENV !== "production",
+  //   devTools: process.env.NODE_ENV !== "production",
 });
