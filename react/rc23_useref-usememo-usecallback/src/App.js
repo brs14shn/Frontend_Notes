@@ -1,5 +1,6 @@
 import React from "react";
 import ReactMemo from "./ReactMemo";
+import UseMemo from "./UseMemo";
 // import UseRefComp from "./components/UseRefComp";
 // import UseRefTwoUse from "./components/useRefTwoUse";
 
@@ -8,7 +9,8 @@ function App() {
     <div className="App">
       {/* <UseRefComp/> */}
       {/* <UseRefTwoUse/> */}
-      <ReactMemo/>
+      {/* <ReactMemo/> */}
+      <UseMemo/>
     </div>
   );
 }
