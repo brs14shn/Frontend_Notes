@@ -1,25 +1,21 @@
-import React from "react";
-import fs from "../assets/fs.png";
+import React, { memo } from "react";
+import UserItem from "./UserItem";
 
-const Users = ({ users }) => {
-  console.log("Users Componets Rendering");
+const Users = ({ users, addUser }) => {
+  console.log("Users Component Rendered");
+
   return (
-    <div className="users">
-      <button className="add-button" onClick={null}>
-        Add Users
+    <>
+      <div className="users">
+        {users?.map((user) => (
+          <UserItem key={user.id} user={user} />
+        ))}
+      </div>
+      <button id="add-button" onClick={addUser}>
+        Add User
       </button>
-      {users?.map((user) => {
-        const { name, username, email, id } = user;
-
-        return (
-          <div className="useritem" key={id}>
-            <img src={fs} style={{ width: "100px" }} alt="" />
-            <p>{name}</p>
-          </div>
-        );
-      })}
-    </div>
+    </>
   );
 };
 
-export default Users;
+export default memo(Users);
