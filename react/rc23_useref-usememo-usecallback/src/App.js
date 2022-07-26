@@ -1,10 +1,14 @@
 import React from "react";
-import UseRefComp from "./components/UseRefComp";
+import ReactMemo from "./ReactMemo";
+// import UseRefComp from "./components/UseRefComp";
+// import UseRefTwoUse from "./components/useRefTwoUse";
 
 function App() {
   return (
     <div className="App">
-      <UseRefComp/>
+      {/* <UseRefComp/> */}
+      {/* <UseRefTwoUse/> */}
+      <ReactMemo/>
     </div>
   );
 }

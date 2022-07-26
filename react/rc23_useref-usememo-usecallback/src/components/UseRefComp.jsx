@@ -29,8 +29,10 @@ const UseRefComp = () => {
     // const random = Math.trunc(Math.random() * colors.length);
     // console.log(random);
     //? div elemetini yakaladık.
-    // divRef.current.style.backgroundColor = colors[random];
+    //? 🎈  divRef.current.style.backgroundColor = colors[random];
     divRef.current.style.backgroundColor = inputRef.current.value;
+
+    //
   };
 
   const increase = () => {
@@ -42,12 +44,12 @@ const UseRefComp = () => {
     <div ref={divRef} className="useref">
       <h2>UseRefComponents</h2>
       <input ref={inputRef} type="text" placeholder="Enter text..." />
-      <input
+      {/* <input
         style={{ marginTop: "1rem" }}
         ref={inputRef}
         type="color"
         placeholder="Enter text..."
-      />
+      /> */}
       <button onClick={changeBgColor}>ChangeBgColor</button>
       <button onClick={increase}>Increase</button>
     </div>
