@@ -3,7 +3,9 @@
  - Backend tarafından veriyi test etmek için kullanılır...
 
 # API nedir?
-- Authentician and Authorize
+- Authenticatian and Authorize
+  - Kimlik doğrulama - Yetki
+  bunu nasıl sağlarız.API KEY VEYA TOKEN ler yoluyla bu test edilebilir.
 - Database HTTP (Hyper Text Transfer Protocol) requests iletiriz.Response elde ederiz.
 - Bir uygulamanın birden fazla veri almak gerekirse;
 - Ara katman 
