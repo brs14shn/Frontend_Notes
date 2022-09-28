@@ -18,10 +18,7 @@ yarn create react-app my-app
 
 []()https://create-react-app.dev/docs/getting-started
 
-## JSX 
-JSX ile ilgili react dokümanı👇
 
-[]()https://tr.reactjs.org/docs/introducing-jsx.html
 
 Githubtan react dosyası clone yaptığımızda;
 ```
@@ -31,3 +28,58 @@ or
 yarn---best pratice
 ```
 komutlarıyla node modules install edilir.Git bash kullanmak önerilir.
+
+## Component Mimarisi
+- Compoenetin çağrılması self closing tag ile yapılır.
+- Single Pages Application
+- Herbir componentin export edilmesi ve kullanılacak yerde 
+- import edilerek erişim sağlanması
+- Component isimleri büyük harfle başlamalıdır
+
+<img src="">
+
+index.js👇
+
+//! index componenti ReactDOM.createRoot() metodu ile
+//! public klasorunde yer alan index.html icersindeki id'si root
+//! olan elemana erisir.
+
+const root = ReactDOM.createRoot(document.getElementById('root')); //* create ile object haline gelir
+root.render(<App />);
+
+
+## JSX 
+
+JSX ile ilgili react dokümanı👇
+
+[]()https://tr.reactjs.org/docs/introducing-jsx.html
+
+
+
+//? React,JSX kullanmaktadir.
+//? JSX'de, HTMl elementleri dogrudan JS icerisinde kullanilabilir
+
+//! Componentler, HTML,CSS ve JS kodlarindan meydana gelmiş
+//! bir kod parcacigidir.
+
+//! Bir componentin return () kismi ise JSX kodlari icerir.
+
+//! JSX'in kendine gore bazi kurallari vardir. Ornegin bir
+//! component eger birden fazla html elementi dondurmesi
+//! gerekirse bunlari tek bir container elemani ile sarmayalarak
+//! dondurmelidir.container icin div, article, header, <> v.b
+//! herhangi bir element kullanilabilir.
+
+
+//? App componentinin tanimlanmasi
+function App() {
+  return (
+    //? return içinde JSX kullanılır.COMPONENTLER RETURN İŞLEVİ VARDIR
+     //? stillendirme yapilmayacaksa container icin <> kullanilabilir
+    <div>
+     <h1></h1>
+    </div>
+  );
+}
+
+export default App;
