@@ -130,8 +130,9 @@ const imgStyle={
 
 ```
 
-//! NOTLAR:
-//* Stillendirme icin property-value(object) yapisi kullanilir.
-//* property isimlerinde camelCase kullanimalidir.
-//* class isimleri icin className kullanilir.
-//* Material UI, Styled Component, Sass, Bootstrap v.b harici kutuphaneler kullanilabilir.
+### ⭐ NOTLAR:
+- Stillendirme icin property-value(object) yapisi kullanilir.
+
+- property isimlerinde camelCase kullanimalidir.
+- class isimleri icin className kullanilir.
+- Material UI, Styled Component, Sass, Bootstrap v.b harici kutuphaneler kullanilabilir.
