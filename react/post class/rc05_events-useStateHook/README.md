@@ -104,3 +104,73 @@ Yaygin kullanim Fonksiyonel Component'lerdir.
 export default Event;
 ```
 
+## CLASS BASED USESTATE
+React 16.8 versiyonu ile birlikte function based component ve hook yapısı gelmiştir.
+Class componentin synax anlaşılmasını zorlaştırmaktadır.This yapısını ilgili local fonksiyonu mu yoksa global objeyi temsil ettiği bazen karıştırabilmektedir.
+Şimdi class componentin yapısını ve içerisinde state işleminin yapısını görelim
+VSCODE içerisinde kısayol olarak rcc, rcep vb. yollarda oluşturulabilir.Constructor oluşturmanın kısa yolu ise **rconst** 
+
+```
+# Constructor
+export default class Counter extends Component {
+
+//! Kısayolu rconst👇
+
+constructor(props) {
+  super(props)
+
+  this.state = {
+     //count:0  Başlangıç  değeri 0 olan bir statetimiz mevcut
+     count: props.count || 0,
+
+  };
+
+  //* handleInc metodunun Counter class'ina baglanmasi
+  //? setState kullanmak için handleInc classa bağlamamız gerekiyor.
+  //? Bind : methoda classa bağlamak istiyorsak
+this.handleInc = this.handleInc.bind(this);
+}
+
+handleInc=()=>{
+    🚨 setState undefined 👆 hatası alacağız.Bunu düzeltmek için bind kullan 
+    this.setState({
+        count:this.state.count + 1,
+    })
+
+}
+
+handleDec=()=>{
+    this.setState({
+        count:this.state.count > 0 ? this.state.count -1 :  this.state.count * 0 ,
+    })
+}
+
+//!  👆 Yazmis oldugumuz metotlar default olarak classa baglanmaz.Ancak, React built-in fonksiyonlari baglidir (Component Did Mount gibi)
+❎ Bunun icin metotlarimizi ya constructor icerisinde baglamaliyiz yada otomatik baglamayi saglayan arrow fonksiyonlarini kullanmaliyiz. 🔺 Arrow fonksiyonu kullanırsak bind işlemine gerek kalmıyor.
+
+handleClear=()=>{
+    this.setState({
+        count:this.state.count * 0,
+    })
+}
+  render() {
+    return (
+      <div>
+        <div className='container text-center mt-4'>
+        <h1 className='display-4 text-danger m-4'>COUNT:{this.state.count}</h1>
+        
+        <button onClick={this.handleInc}  className=' btn btn-danger' >INCREASE</button>
+        <button  onClick={this.handleClear} className=' ms-3 btn btn-success' >CLEAR</button>
+        <button onClick={this.handleDec}  className='ms-3 btn btn-warning'>DECREASE</button>
+    </div>
+
+      </div>
+    )
+  }
+}
+
+```
+
+
+
+## FUNCTİON BASED İN USESTATE

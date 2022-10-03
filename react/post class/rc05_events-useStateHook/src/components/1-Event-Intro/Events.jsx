@@ -27,11 +27,12 @@ let info="Events"
     alert(text)
 
  }
-const handleChange=()=>{
+const handleChange=(e)=>{
     info="HOOKS"
     console.log(info)
     // Burada HOOKS kelimesini değiştirdirmiyor.
     //Amaç DOM 
+    console.log(e.target.value)
 
 }
 
@@ -49,7 +50,7 @@ const handleChange=()=>{
         <button onClick={()=>handleClear("Clear Btn pressed")}  className='ms-3 btn btn-dark' >Clear</button>
         {/* <button onClick={()=>handleClear()}  className='ms-3 btn btn-dark' >Clear</button> */}
         {/* <button onClick={()=>handleClear}  className='ms-3 btn btn-dark' >Clear</button> */}
-        <button onClick={handleChange} className='ms-3 btn btn-warning'>Change</button>
+        <button onClick={(e)=>handleChange(e)} className='ms-3 btn btn-warning'>Change</button>
     </div>
   )
 }

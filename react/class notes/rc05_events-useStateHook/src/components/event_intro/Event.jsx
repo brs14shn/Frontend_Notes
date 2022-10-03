@@ -3,6 +3,8 @@
 // *                     EVENTS
 // * =======================================================
 
+import { useState } from "react";
+
 //? ReactJS, Tarayicilar arasi uyumluluk ve performans artisi gibi
 //? sebeplerden oturu Sentetik Event olarak adilandirilan Olaylari
 //? kullanir. Sentetik Event, aslinda tarayicinin dogal event'larinin
@@ -16,6 +18,7 @@ const Event = () => {
     let info="EVENTS";
   
      const handleClick=()=>{
+      const [info,setInfo] =useState("Hooks")
         alert("Btn chicked")
      }
      const handleClear=(text)=>{
@@ -23,6 +26,7 @@ const Event = () => {
      }
 
      const handleChange=(e)=>{
+      setInfo()
         info="HOOKS"
         console.log(info)
         //* Dom basmıyor ancak console da gözüküyor
@@ -31,7 +35,6 @@ const Event = () => {
 
      }
 
-   
     return (
     <div className="container text-center mt-4">
         <div className="display-4 text-danger m-4">{info}</div>
