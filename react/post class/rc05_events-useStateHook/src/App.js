@@ -1,8 +1,11 @@
+import Events from "./components/1-Event-Intro/Events";
+
 function App() {
   return (
     <div>
-      <h1>APP</h1>
+        <Events/>
     </div>
+    
   );
 }
 
