@@ -16,6 +16,7 @@ import React from 'react'
 
 const Events = () => {
 
+let info="Events"
 
  const handleClick=()=>{
     alert("Btn clicked")
@@ -26,11 +27,18 @@ const Events = () => {
     alert(text)
 
  }
+const handleChange=()=>{
+    info="HOOKS"
+    console.log(info)
+    // Burada HOOKS kelimesini değiştirdirmiyor.
+    //Amaç DOM 
 
+}
 
 
   return (
     <div className='container text-center mt-4'>
+        <div className='display-4 text-danger m-4'>{info}</div>
         <button onClick={handleClick} className=' btn btn-danger' >Click</button>
         {/* Fonksiyonu refere ettiğinden self-trigger olmaz */}
         
@@ -39,8 +47,9 @@ const Events = () => {
         Yani self-trigger bu engelemek için arrow func kullanılır.Paramere varsa arrow funct olmalı yoksa invoke olarak hareket eder. */}
         
         <button onClick={()=>handleClear("Clear Btn pressed")}  className='ms-3 btn btn-dark' >Clear</button>
-        <button onClick={()=>handleClear()}  className='ms-3 btn btn-dark' >Clear</button>
+        {/* <button onClick={()=>handleClear()}  className='ms-3 btn btn-dark' >Clear</button> */}
         {/* <button onClick={()=>handleClear}  className='ms-3 btn btn-dark' >Clear</button> */}
+        <button onClick={handleChange} className='ms-3 btn btn-warning'>Change</button>
     </div>
   )
 }
