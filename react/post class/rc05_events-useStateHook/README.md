@@ -62,7 +62,7 @@ class className olarak kullanılır
 
 ```
 
-##  🚩 State
+## 🚩State
 
 ```
 const Event = () => {
@@ -104,7 +104,7 @@ Yaygin kullanim Fonksiyonel Component'lerdir.
 export default Event;
 ```
 
-## CLASS BASED USESTATE
+## 🚩CLASS BASED USESTATE
 React 16.8 versiyonu ile birlikte function based component ve hook yapısı gelmiştir.
 Class componentin synax anlaşılmasını zorlaştırmaktadır.This yapısını ilgili local fonksiyonu mu yoksa global objeyi temsil ettiği bazen karıştırabilmektedir.
 Şimdi class componentin yapısını ve içerisinde state işleminin yapısını görelim
@@ -122,6 +122,7 @@ constructor(props) {
   this.state = {
      //count:0  Başlangıç  değeri 0 olan bir statetimiz mevcut
      count: props.count || 0,
+     props 👆 olarak gönderilen count kullanımı
 
   };
 
@@ -173,4 +174,4 @@ handleClear=()=>{
 
 
 
-## FUNCTİON BASED İN USESTATE
+## 🚩 FUNCTİON BASED İN USESTATE

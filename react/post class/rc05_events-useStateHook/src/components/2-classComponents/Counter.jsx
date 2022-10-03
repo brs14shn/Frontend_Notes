@@ -22,7 +22,8 @@ constructor(props) {
 
   this.state = {
      //count:0
-     count: props.count || 0,
+     count: props.count || 0, 
+     //NAN HATASI VEYA UNDEFİNED HATASINI ÖNLEMEK İÇİN KULLANDIK.
 
   };
   //* handleInc metodunun Counter class'ina baglanmasi
