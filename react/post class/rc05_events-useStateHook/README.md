@@ -49,7 +49,7 @@ Performans açısından ve birde browser arası uyumluluuğu sağlamak için
 //? sorunsuz calismasini saglanir.
 //? Ayrinti icin : https://reactjs.org/docs/events.html
 
-## Bootstrap 
+## 🚩 Bootstrap 
 Reacta bootstrap kullanmak için 👇
 
 ```
@@ -61,3 +61,46 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class className olarak kullanılır
 
 ```
+
+##  🚩 State
+
+```
+const Event = () => {
+
+    let info="EVENTS";
+     const handleChange=(e)=>{
+        info="HOOKS"
+        console.log(info)
+        //* Dom basmıyor ancak console da gözüküyor
+        //* React statik olarak görür
+        console.log(e.target);
+
+     } 👇 👇 👇
+
+     info console'da guncellendigini ancak DOM'da guncellenmedigini gorduk.
+Bunun sebebi REACT'in aksi belirtilmedigi surece elementleri
+# static olarak kabul etmesinden kaynaklanir.Amaç DOM manipülasyonlarını azaltmaktır.Değişimleri kontrol etmez.Diff algoritması belirtilmezse static olarak kabul eder.Diff algoritmasını çalıştırmak için state yapısını kullanılır.State aslında bir React objesidir.State elementin özel bilgilerini tutar.
+
+1️⃣ React bunu DOM islemlerini minimize etmek icin yapmaktadir.
+2️⃣ REACT'a hangi elementleri interaktif oldugu belirtilmelidir.
+3️⃣ React'a elementlerin interaktif oldugunu belirtmek icin state'ler kullanilir.
+🕹️ ## State, elementlerin degisiklik durumlarini tutan nesnelerdir.
+ReactJs'de state'leri kullanmak icin  2 ayri Component yapisi bulunmaktadir.
+- 1. Statefull Classes (Class Components).
+- 2. Hooks (Functional Components).
+
+Biz su ana kadar uygulamalarimizda Fonksiyonel Component'leri kullandik.
+Yaygin kullanim Fonksiyonel Component'lerdir.
+   
+    return (
+    <div className="container text-center mt-4">
+
+        <button onClick={(e)=>handleChange(e)} className="btn btn-primary ms-3">Change</button>
+        
+    </div>
+  )
+}
+
+export default Event;
+```
+
