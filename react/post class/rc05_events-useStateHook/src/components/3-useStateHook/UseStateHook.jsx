@@ -33,7 +33,7 @@ const UseStateHook = () => {
 
 const handleAgeInc=()=>{
     setInfo({...info,age:info.age+1})
-    //! Objectin içindeki bir verinin değerini değiştirmek istiyorsak,sperad operatörü ile ilgili 
+    //! Objectin içindeki bir verinin değerini değiştirmek istiyorsak,speard operatörü ile ilgili 
     //! objecti açıyoruz.Sonrasında değiştirmek istediğimiz key ve value değerlerini yazıyoruz...
    //console.log(info.age);
     
