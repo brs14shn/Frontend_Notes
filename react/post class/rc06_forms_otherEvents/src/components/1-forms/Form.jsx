@@ -13,16 +13,17 @@ const handleUsername =(e)=>{
 }
 
 const handleSubmit =(e)=>{
-  e.preventDefault()  //* Refresh özelliğini kapattık.
+  e.preventDefault()  //? Refresh özelliğini kapattık.
   alert(`username  : ${username}`)
-  // setEmail("")
-  // setPassword("")
-  // setUsername("")
+  setEmail("")
+  setPassword("")
+  setUsername("")
+  // e.target.reset()
   
 }
 
   return (
-    <div  >
+    <div className="container">
       <form onSubmit={handleSubmit} style={{margin:"5rem"}}>
         <div className="mb-3">
           <label htmlFor="username" className="form-label">
