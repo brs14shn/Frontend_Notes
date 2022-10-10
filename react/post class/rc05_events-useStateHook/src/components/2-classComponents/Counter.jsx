@@ -47,7 +47,8 @@ handleDec=()=>{
 }
 
 //!  👆 Yazmis oldugumuz metotlar default olarak classa baglanmaz.Ancak, React built-in fonksiyonlari baglidir (Component Did Mount gibi)
-//! Bunun icin metotlarimizi ya constructor icerisinde baglamaliyiz yada otomatik baglamayi saglayan arrow fonksiyonlarini kullanmaliyiz.Arrow fonksiyonu kullanırsak bind işlemine gerek kalmıyor.
+//! Bunun icin metotlarimizi ya constructor icerisinde baglamaliyiz yada otomatik baglamayi saglayan arrow fonksiyonlarini kullanmaliyiz.
+//!Arrow fonksiyonu kullanırsak bind işlemine gerek kalmıyor.
 
 handleClear=()=>{
     this.setState({
