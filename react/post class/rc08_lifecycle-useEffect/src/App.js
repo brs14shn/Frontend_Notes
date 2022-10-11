@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import LifeCycleMethods from './components/LifeCycleMethods';
+import UseEffectHook from './components/UseEffectHook';
 
 function App() {
 
@@ -11,12 +12,14 @@ function App() {
       <button
       onClick={()=>setShow(!show)}
       className='btn btn-warning'>
-       {show ? "Show" : "Hide"}
+       {show ? "Hide" : "Show"}
       </button>
       {/* {Conditional Rendering} */}
-     {show &&  <LifeCycleMethods /> } 
+     {/* {show &&  <LifeCycleMethods /> }  */}
      {/* {show ?  <LifeCycleMethods /> :null }  */}
      {/* {!show || <LifeCycleMethods /> } */}
+     
+{   show &&  <UseEffectHook/>}
     </div>
   );
 }

@@ -51,6 +51,7 @@ componentDidUpdate(){
   console.log("Updated");
 }
 
+//! 5-) Bir componentin DOM ağacından kaldırıltıktan sonra  çalışır
 componentWillUnmount(){
   console.log("UnMount");
 }
