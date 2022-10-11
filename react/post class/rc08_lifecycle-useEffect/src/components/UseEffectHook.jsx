@@ -55,7 +55,14 @@ const UseEffectHook = () => {
   };
 
   useEffect(() => {
-   
+    //*ComponenentDidMount
+    const timerId = setInterval(fetchData, 1000);
+    console.log("Mounted");
+    return () => {
+      //* componentWillUnMount
+      clearInterval(timerId);
+      console.log("Unmounted");
+    };
   }, []);
 
   console.log("rendered");

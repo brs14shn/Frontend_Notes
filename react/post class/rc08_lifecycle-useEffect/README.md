@@ -244,6 +244,10 @@ Componentin oluşturulduktan sonraki meydana geçen (ekleme,güncelleme ve kald�
 her aşamaya 
 
 
-## useEffect
+## 🚩useEffect
 
 Class componente meydana gelen lifecycle methodları uygulamamızı sağlar.
+UseEffect Hook'u fonksiyonel componenler'te yan etkileri (side effect) gerceklestirmek icin kullanilir.
+
+ComponentDidMount,ComponentDidUpdate,ve ComponentWillUnmount
+metotlarinin bir birlesimi gibi dusunulebilir.
