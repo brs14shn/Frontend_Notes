@@ -42,12 +42,20 @@ const UseEffectHook = () => {
   // },[]);
 
   //! ComponentDidMount + componentDidUpdate
+  //? ComponentDidUpdate tek başına oluşmaz.
   // useEffect(() => {
   //   console.log('Mounted + Updated');
   //   setTimeout(() => {
   //     alert('Data Fetched');
   //   }, 1000);
   // }, [count]);
+  
+  // useEffect(() => {
+  //   console.log('Mounted + Updated');
+  //   setTimeout(() => {
+  //     alert('Data Fetched');
+  //   }, 1000);
+  // });
 
   //! ComponentDidMount + componentWillUnmount
   const fetchData = () => {
