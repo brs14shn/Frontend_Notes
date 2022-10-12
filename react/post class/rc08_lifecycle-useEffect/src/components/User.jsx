@@ -15,21 +15,22 @@ const User = () => {
 
 //! Bu engelemek için veriyi bir butona bağlanabiliriz.👇 Ancak yöntem çok effective useable değil
 
+//! FETCH
 const getUser =() =>{
 setLoading(true);
 fetch("https://jsonplaceholder.typicode.com/users")
 .then((res)=>res.json())
 .then((data)=>setUser(data))
-
-
-}
-
 setTimeout(function(){
     setLoading(false);
 },3000)
+}
+
+
 
 //? Bunun yerine useEffect hookunu kullanıyoruz.
 
+//! USE EFFECT
 useEffect(() => {
 //ComponentDidMount --Bir kez çalışacak.
 getUser()
@@ -38,22 +39,27 @@ getUser()
 
 console.log(user); //Birincisinde undefined gelecek.Çünkü renderdan sonra componentDidMount çalışıyor.
 
-if (loading) {
-    return(
-        <img src={loadingImage} />
-    )
-}
+
+//! LOADİNG
+// if (loading) {
+//     return(
+//         <img src={loadingImage} />
+//     )
+// }
 
 
+
+//! style 
 const colStyle = {
-   
     boxShadow:"rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
 }
 
-//! style 
-// box-shadow: 
+
   return (
     <div >
+        {loading &&  <img src={loadingImage} />
+        
+        }
         <h1 className='display-6'>User List</h1>
         {/* <button onClick={getUser}  className='btn btn-danger'>Get User</button> */}
         <div className="row gap-4">

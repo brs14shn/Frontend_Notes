@@ -1,7 +1,6 @@
 
 ## <center>🔄 LifeCycleMethods  🔄 </center>
 
-
 ### SUMMARY
 
 ✅ Lifecycle metotlari componetnlerin DOM'da varoldugu sure boyunca
@@ -84,9 +83,6 @@ componentDidMount(){
   }
 }
 export default LifeCycleMethods;
-
-
-
 ```
 
   <h3>  🚩 Updating </h3>
@@ -162,16 +158,13 @@ componentDidUpdate(){
   }
 }
 export default LifeCycleMethods;
-
-
 ```
 
-  <h3>  🚩 WillMount </h3>
+  <h3>  🚩 WillUnMount </h3>
 
   This method is called when a component is being removed from the DOM:
 
   ❗ You should not call setState() in componentWillUnmount() because the component will never be re-rendered. Once a component instance is unmounted, it will never be mounted again.
-
 
   ```js
 
@@ -214,7 +207,6 @@ componentWillUnmount(){
   console.log("UnMount");
 }
 
-
   render() {
      //! 2-) Her bir render'da cagrilir
      //? Her state değiştiğinde render çağrılır.
@@ -232,22 +224,72 @@ componentWillUnmount(){
 }
 export default LifeCycleMethods;
 
-
-
   ```
 
+##  <center> 🚩useEffect 🚩 </center>
 
-
-Class componentlerle özdeşleşmiş bir konudur olarak karşımıza çıkmaktadır.
-
-Componentin oluşturulduktan sonraki meydana geçen (ekleme,güncelleme ve kaldırma) 
-her aşamaya 
-
-
-## 🚩useEffect
-
-Class componente meydana gelen lifecycle methodları uygulamamızı sağlar.
+✅  Class componente meydana gelen lifecycle methodları uygulamamızı sağlar.
 UseEffect Hook'u fonksiyonel componenler'te yan etkileri (side effect) gerceklestirmek icin kullanilir.
 
-ComponentDidMount,ComponentDidUpdate,ve ComponentWillUnmount
+✅  ComponentDidMount,ComponentDidUpdate,ve ComponentWillUnmount
 metotlarinin bir birlesimi gibi dusunulebilir.
+
+1️⃣ - ComponentDidMount
+
+```js
+
+useEffect(() => {
+//ComponentDidMount code 
+
+ }, []);
+
+//! ComponentDidMount
+useEffect(() => {
+console.log('Mounted'); //! fetch, asyn-await ,localStorage, setTimeout
+     setTimeout(() => {
+      alert('Data Fetched');
+    }, 3000);
+  },[]);
+
+```
+
+2️⃣ - ComponentDidMount + componentDidUpdate
+
+```js
+useEffect(() => {
+//? componentDidUpdate code 
+}, [var1, var2]);
+
+//! ComponentDidMount + componentDidUpdate
+//? ComponentDidUpdate tek başına oluşmaz.
+useEffect(() => {
+  console.log('Mounted + Updated');
+  setTimeout(() => {
+   alert('Data Fetched');
+  }, 1000);
+  }, [count]);
+  
+```
+
+3️⃣ -  ComponentDidMount + componentWillUnmount
+
+```js
+useEffect(() => {
+ return () =>
+  {
+  //* componentWillUnmount code */
+};
+}, []);
+
+seEffect(() => {
+    //*ComponenentDidMount
+    const timerId = setInterval(fetchData, 1000);
+    console.log("Mounted");
+    return () => {
+      //* componentWillUnMount
+      clearInterval(timerId);
+      console.log("Unmounted");
+    };
+  }, []);
+
+```
