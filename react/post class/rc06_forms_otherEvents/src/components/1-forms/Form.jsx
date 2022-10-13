@@ -14,7 +14,7 @@ const [email, setEmail] = useState("")
 const [password,setPassword] =useState("")
 
 const handleUsername =(e)=>{
-  //console.log(e.target.value)
+  console.log(e.target.value)
  setUsername(e.target.value)
 }
 

@@ -57,9 +57,9 @@ const colStyle = {
 
   return (
     <div >
-        {loading &&  <img src={loadingImage} />
-        
-        }
+        {loading  ? <img src={loadingImage}/> :
+        <>
+
         <h1 className='display-6'>User List</h1>
         {/* <button onClick={getUser}  className='btn btn-danger'>Get User</button> */}
         <div className="row gap-4">
@@ -73,6 +73,11 @@ const colStyle = {
             })}
             
         </div>
+
+        </>
+        
+        }
+
     </div>
   )
 }
