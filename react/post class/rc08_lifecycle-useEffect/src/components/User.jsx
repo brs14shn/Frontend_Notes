@@ -49,7 +49,7 @@ console.log(user); //Birincisinde undefined gelecek.Çünkü renderdan sonra com
 
 
 
-//! style 
+//! lokal  style 
 const colStyle = {
     boxShadow:"rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
 }

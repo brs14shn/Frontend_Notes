@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import LifeCycleMethods from './components/LifeCycleMethods';
+import UseEffectExamples from './components/UseEffectExamples';
 import UseEffectHook from './components/UseEffectHook';
 import User from './components/User';
 
@@ -9,7 +10,7 @@ function App() {
   console.log(show)
 
   return (
-    <div className="container text-center mt-4" 
+    <div className="container text-center mt-4 bg-dark" 
     // style={{backgroundColor:"pink"}}
     
     >
@@ -24,7 +25,8 @@ function App() {
      {/* {!show || <LifeCycleMethods /> } */}
      
 {/* {   show &&  <UseEffectHook/>} */}
-    <User/>
+    {/* <User/> */}
+    <UseEffectExamples/> 
     </div>
   );
 }
