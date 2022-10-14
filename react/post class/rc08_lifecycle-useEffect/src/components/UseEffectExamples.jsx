@@ -8,8 +8,10 @@ const UseEffectExamples = () => {
 
     const getDataApi =async () =>{
         const res = await axios.get(url)
+        // const {res} = await axios.get(url)
        if (res.data){
         setProducts(res.data.products)
+        // setProducts(data.products)
        }
     }
     console.log(products)

@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import HoverCardUseEffect from './components/HoverCardUseEffect';
 import LifeCycleMethods from './components/LifeCycleMethods';
 import UseEffectExamples from './components/UseEffectExamples';
 import UseEffectHook from './components/UseEffectHook';
 import User from './components/User';
+
 
 function App() {
 
@@ -10,7 +12,7 @@ function App() {
   console.log(show)
 
   return (
-    <div className="container text-center mt-4 bg-dark" 
+    <div className="" 
     // style={{backgroundColor:"pink"}}
     
     >
@@ -26,7 +28,8 @@ function App() {
      
 {/* {   show &&  <UseEffectHook/>} */}
     {/* <User/> */}
-    <UseEffectExamples/> 
+    {/* <UseEffectExamples/>  */}
+    <HoverCardUseEffect/>
     </div>
   );
 }
