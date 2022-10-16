@@ -32,7 +32,29 @@ yarn---best pratice
 ```
 komutlarıyla node modules install edilir.Git bash kullanmak önerilir.
 
+## 🚩  FOLDER STRUCTURE
 
+```js
+.
+├── README.md
+├── package-lock.json
+├── package.json
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+├── src
+│   ├── App.css
+│   ├── App.js
+│   ├── Msg.jsx
+│   ├── Person.jsx
+│   ├── data.js
+│   └── index.js
+└── yarn.lock
+```
 
 ## 🚩 Component Mimarisi
 - Compoenetin çağrılması self closing tag ile yapılır.
