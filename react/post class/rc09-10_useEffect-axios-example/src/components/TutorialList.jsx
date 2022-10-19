@@ -2,19 +2,19 @@ import { FaEdit } from 'react-icons/fa';
 import { AiFillDelete } from 'react-icons/ai';
 
 
-const TutorialList = () => {
-  const tutorials = [
-    {
-      id:1,
-      title:"HTML",
-      description:"HTML is a markup language"
-    },
-    {
-      id:2,
-      title:"CSS",
-      description:"HTML is a markup language"
-    }
-  ]
+const TutorialList = ({tutorials}) => {
+  // const tutorials = [
+  //   {
+  //     id:1,
+  //     title:"HTML",
+  //     description:"HTML is a markup language"
+  //   },
+  //   {
+  //     id:2,
+  //     title:"CSS",
+  //     description:"HTML is a markup language"
+  //   }
+  // ]
   return (
     <div className="container mt-4">
       <table className="table table-striped">
@@ -38,15 +38,12 @@ const TutorialList = () => {
                 <td>{description}</td>
                 <td className="text-center text-nowrap">
                   <FaEdit
-                    data-bs-toggle="modal"
-                    data-bs-target="#edit-modal"
                     size={20}
                     className="me-2 text-warning cursor-pointer"
                   />
                   <AiFillDelete
                     size={22}
                     className="text-danger cursor-pointer"
-                  
                   />
                 </td>
               </tr>
