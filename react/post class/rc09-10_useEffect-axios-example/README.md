@@ -39,6 +39,7 @@ import { useState, useEffect } from 'react';
 const Home = () => {
  //? tutorials
   const [tutorials, setTutorials] = useState();👇
+  const url = 'https://tutorials-api-cw.herokuapp.com/api/tutorials';
 
   1️⃣ propslar yukarıdan aşağıya doğru bir akış seyreder.
   2️⃣ Aşağıdan yukarıya veri akışını global statement (context veya redux) yoluyla yapabiliriz.Ancak reactın yapısını bozmaktadır.
@@ -79,16 +80,26 @@ useEffect(() => {
   }, [])
 
 
+💥 AddTutorials.jsx gönderilen veri backend gidecek ancak TutorList.jsx güncellenmeyecektir.
+
+💥 Bunu engellemek için addtutorials fonksiyonu Home.js yazıp props olarak AddTutorial.jsx  gönderiririz.Bu da şunu sağlıyor addtutorials func sayesinde tutorial state güncelleyebiliriz. Ancak AAddTutorials.jsx yazarsak yukarı veri taşıma işlemi yapamayız.
 
 
+const addTutorial = async(tutorial)=>{
+  try {
+    await axios.post(url,tutorial) 
+  } catch (error) {
+    console.log("error") 
+  }
+  getTutorials() // refresh yaptığında gelmesini engelledik.
+}
 
+//! addTutorial func props olarak AddTutorial gönderiyoruz.
 
-
-  const url = 'https://tutorials-api-cw.herokuapp.com/api/tutorials';
   return (
     <>
-      <AddTutorial/>
-      <TutorialList
+       <AddTutorial addTutorial = {addTutorial}/>
+      <TutorialList tutorials={tutorials} />
       />
     </>
   );
@@ -103,15 +114,21 @@ export default Home;
 
 import { useState } from 'react';
 
-const AddTutorial = () => {
+const AddTutorial = ({addTutorial}) => {
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    addTutorial({title:title,description:desc})
+    // title ve description backend keyleri title,desc ise bizim statelerimiz
     setTitle('');
     setDesc('');
   };
+
+✅ Form submit iki önemli artısı vardır.
+1️⃣ required check eder.
+2️⃣ Enter tuşu otomatik olarak çalışır.
 
   return (
     <div className="container text-center mt-4">

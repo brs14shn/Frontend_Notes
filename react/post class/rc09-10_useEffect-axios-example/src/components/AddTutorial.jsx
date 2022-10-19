@@ -1,14 +1,19 @@
 import { useState } from 'react';
 
-const AddTutorial = () => {
+const AddTutorial = ({addTutorial}) => {
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    addTutorial({title:title,description:desc})
     setTitle('');
     setDesc('');
   };
+
+  //! form submit iki önemli artısı vardır.
+ //! (1) required check eder.
+  //! (2) Enter tuşu otomatik olarak çalışır.
 
   return (
     <div className="container text-center mt-4">
