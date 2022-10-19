@@ -2,7 +2,7 @@ import { FaEdit } from 'react-icons/fa';
 import { AiFillDelete } from 'react-icons/ai';
 
 
-const TutorialList = ({tutorials}) => {
+const TutorialList = ({tutorials,deleteTutorial}) => {
   // const tutorials = [
   //   {
   //     id:1,
@@ -15,6 +15,8 @@ const TutorialList = ({tutorials}) => {
   //     description:"HTML is a markup language"
   //   }
   // ]
+
+ 
   return (
     <div className="container mt-4">
       <table className="table table-striped">
@@ -44,6 +46,7 @@ const TutorialList = ({tutorials}) => {
                   <AiFillDelete
                     size={22}
                     className="text-danger cursor-pointer"
+                    onClick={()=>deleteTutorial(id)}
                   />
                 </td>
               </tr>
