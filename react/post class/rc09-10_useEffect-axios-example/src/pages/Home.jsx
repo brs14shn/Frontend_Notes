@@ -3,6 +3,7 @@ import TutorialList from '../components/TutorialList';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import {toastSuccessNotify} from "../helper/ToastNotify"
+import {toastWarnNotify} from "../helper/ToastNotify"
 
 const Home = () => {
   const [tutorials, setTutorials] = useState();
@@ -66,6 +67,7 @@ const addTutorial = async(tutorial)=>{
       console.log(error);
     }
     getTutorials()
+    toastWarnNotify("Tutorial deleted")
   }
 
 
