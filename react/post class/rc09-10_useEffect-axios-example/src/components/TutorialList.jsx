@@ -1,8 +1,9 @@
 import { FaEdit } from 'react-icons/fa';
 import { AiFillDelete } from 'react-icons/ai';
+import EditTutorial from './EditTutorial';
 
 
-const TutorialList = ({tutorials,deleteTutorial}) => {
+const TutorialList = ({tutorials,deleteTutorial,editTutorial}) => {
   // const tutorials = [
   //   {
   //     id:1,
@@ -42,8 +43,11 @@ const TutorialList = ({tutorials,deleteTutorial}) => {
                 <td>{day}</td>
                 <td className="text-center text-nowrap">
                   <FaEdit
-                    size={20}
-                    className="me-2 text-warning cursor-pointer"
+                  data-toggle="modal" 
+                  data-target="#edit-modal"
+                  size={20}
+                  className="me-2 text-warning cursor-pointer"
+                  onClick={()=>editTutorial(id,"css","html")}
                   />
                   <AiFillDelete
                     size={22}
@@ -56,6 +60,7 @@ const TutorialList = ({tutorials,deleteTutorial}) => {
           })}
         </tbody>
       </table>
+      <EditTutorial/>
 
       
     </div>
