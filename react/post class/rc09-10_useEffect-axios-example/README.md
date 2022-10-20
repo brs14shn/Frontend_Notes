@@ -21,8 +21,9 @@
 
 ## https://axios-example.netlify.app/
 
-[DEMO](./tutorial.gif)
-
+<p align=center >
+<img src ="https://user-images.githubusercontent.com/99876715/196916894-8d5c9a2a-fc12-4b70-ab0a-a10a35f2ebcb.gif"/>
+</p>
 
 ### Home.js 👇
 
