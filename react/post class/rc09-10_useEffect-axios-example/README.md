@@ -21,6 +21,8 @@
 
 ## https://axios-example.netlify.app/
 
+[DEMO](./tutorial.gif)
+
 
 ### Home.js 👇
 
