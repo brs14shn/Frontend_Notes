@@ -39,7 +39,7 @@ console.log(tutorials) // ilk undefined gelir çünkü ilk render işlemi tetikl
 
 //* 💥 AddTutorials.jsx gönderilen veri backend gidecek ancak TutorList.jsx güncellenmeyecektir.
 
-//!* 💥 Bunu engellemk için addtutorials fonksiyonu Home.js yazıp props olarak AddTutorial.jsx  gönderiririz.Bu da şunu sağlıyor addtutorials func sayesinde tutorial state güncelleyebiliriz. Ancak AAddTutorials.jsx yazarsak yukarı veri taşıma işlemi yapamayız.
+//! 💥 Bunu engellemk için addtutorials fonksiyonu Home.js yazıp props olarak AddTutorial.jsx  gönderiririz.Bu da şunu sağlıyor addtutorials func sayesinde tutorial state güncelleyebiliriz. Ancak AAddTutorials.jsx yazarsak yukarı veri taşıma işlemi yapamayız.
 
 //! POST (CREATE)
 const addTutorial = async(tutorial)=>{
@@ -73,12 +73,12 @@ const addTutorial = async(tutorial)=>{
 
 
   return (
-    <>
+    <div>
       <AddTutorial addTutorial = {addTutorial}/>
       <TutorialList tutorials={tutorials} deleteTutorial ={deleteTutorial} />
 
       {/* <TutorialList {...tutorials} /> */}
-    </>
+    </div>
   );
 };
 

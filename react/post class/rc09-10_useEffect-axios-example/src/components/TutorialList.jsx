@@ -25,6 +25,7 @@ const TutorialList = ({tutorials,deleteTutorial}) => {
             <th scope="col">#id</th>
             <th scope="col">Title</th>
             <th scope="col">Description</th>
+            <th scope="col">Day & Time</th>
             <th scope="col" className="text-center">
               Edit
             </th>
@@ -32,12 +33,13 @@ const TutorialList = ({tutorials,deleteTutorial}) => {
         </thead>
         <tbody>
           {tutorials?.map((item) => {
-            const { id, title, description } = item;
+            const { id, title, description,day} = item;
             return (
               <tr key={id}>
                 <th>{id}</th>
                 <td>{title}</td>
                 <td>{description}</td>
+                <td>{day}</td>
                 <td className="text-center text-nowrap">
                   <FaEdit
                     size={20}

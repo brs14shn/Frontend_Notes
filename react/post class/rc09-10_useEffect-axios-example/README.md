@@ -50,6 +50,7 @@ const Home = () => {
   6️⃣ Burada AddTutorial gönderilen verileri Home nasıl aktarırız.Children-parent veri akışı yoktur.Home.js içerisinde verileri tutan tutorials güncellenmeli
   7️⃣💣💥❎➡️Bunu fonksiyonu props olarak göndererek gerçekleştirdik.
 
+//***************************************************************************************//
   //! GET 
   / ❎ axios 👇 
   const getTutorials =async()=>{
@@ -79,13 +80,27 @@ useEffect(() => {
     getTutorials()
   }, [])
 
+//***************************************************************************************//
 
 💥 AddTutorials.jsx gönderilen veri backend gidecek ancak TutorList.jsx güncellenmeyecektir.
 
-💥 Bunu engellemek için addtutorials fonksiyonu Home.js yazıp props olarak AddTutorial.jsx  gönderiririz.Bu da şunu sağlıyor addtutorials func sayesinde tutorial state güncelleyebiliriz. Ancak AAddTutorials.jsx yazarsak yukarı veri taşıma işlemi yapamayız.
+💥 Bunu engellemek için addtutorials fonksiyonu Home.js yazıp props olarak AddTutorial.jsx  gönderiririz.Bu da şunu sağlıyor addtutorials func sayesinde tutorial state güncelleyebiliriz. Ancak AddTutorials.jsx yazarsak yukarı veri taşıma işlemi yapamayız.AddTutorials.jsx submit işleminde addTutorial func çalıştırıyoruz.👇 
 
+# AddTutorial.jsx
+const handleSubmit = (e) => {
+    e.preventDefault();
+    addTutorial({title:title,description:desc})
+    // title ve description backend keyleri title,desc ise bizim statelerimiz
+    setTitle('');
+    setDesc('');
+  };
 
-const addTutorial = async(tutorial)=>{
+❎ Gelen veriyi backend gönderiyoruz ve getTutorials() güncel veriyi geçiyoruz.Böylece TutorList.jsx güncellenmiş
+oluyor.
+
+//***************************************************************************************//
+//! POST (CREATE)
+const addTutorial = async(tutorial)=>{  //! tutorial = {title:title,description:desc}
   try {
     await axios.post(url,tutorial) 
   } catch (error) {
@@ -96,10 +111,36 @@ const addTutorial = async(tutorial)=>{
 
 //! addTutorial func props olarak AddTutorial gönderiyoruz.
 
+
+//***************************************************************************************//
+//! DELETE
+const deleteTutorial =async(id)=>{
+
+    try {
+      await axios.delete(`${url}/${id}`)
+      
+    } catch (error) {
+      console.log(error);
+    }
+    getTutorials()
+    toastWarnNotify("Tutorial deleted")
+  }
+
+❎  TutorList.jsx veriyi silmek için url+id olarak istek gönderiyoruz.
+# TutorialList.jsx içerisinde;onClick eventi ile deleteTutorial func tetikliyoruz ve ilgili verinin id
+sini gönderiyoruz.👇 
+ <AiFillDelete
+   size={22}
+ className="text-danger cursor-pointer"
+onClick={()=>deleteTutorial(id)}
+/>
+
+
   return (
     <>
        <AddTutorial addTutorial = {addTutorial}/>
       <TutorialList tutorials={tutorials} />
+      <TutorialList tutorials={tutorials}  deleteTutorial ={deleteTutorial}/>
       />
     </>
   );
@@ -221,6 +262,7 @@ const TutorialList = () => {
                   <AiFillDelete
                     size={22}
                     className="text-danger cursor-pointer"
+                    onClick={()=>deleteTutorial(id)}
                   />
                 </td>
               </tr>

@@ -3,10 +3,14 @@ import { useState } from 'react';
 const AddTutorial = ({addTutorial}) => {
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
+  const [day,setDay] =useState("")
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTutorial({title:title,description:desc})
+    if(title!=="" && desc!==""){
+      addTutorial({title:title,description:desc,createdAt:day})
+    }
+  
     setTitle('');
     setDesc('');
   };
@@ -17,7 +21,7 @@ const AddTutorial = ({addTutorial}) => {
 
   return (
     <div className="container text-center mt-4">
-      <h1 className="display-6 text-danger">Add Your Tutorial</h1>
+      <h1 className="display-6 text-danger fw-bolder">Add Your Tutorial</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">
@@ -41,9 +45,22 @@ const AddTutorial = ({addTutorial}) => {
             type="text"
             className="form-control"
             id="desc"
-            placeholder="Enter your Description"
+            placeholder="Enter your description"
             value={desc}
             onChange={(e) => setDesc(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label className='form-label' htmlFor="day">Day & Time</label><br />  
+          <input
+            type="date"
+            className="form-control"
+            name="day"
+            id="day"
+            placeholder="Enter your description"
+            value={day}
+            onChange={(e) => setDay(e.target.value)}
             required
           />
         </div>
