@@ -1,4 +1,35 @@
-const EditTutorial = () => {
+import { useState, useEffect } from "react";
+
+const EditTutorial = ({ editTutorial, edited }) => {
+  console.log(edited);
+  const { id, title: newTitle, description } = edited;
+
+  console.log(edited.id);
+
+  const [title, setTitle] = useState(newTitle);
+  const [desc, setDesc] = useState(description);
+
+  //? https://reactjs.org/docs/hooks-reference.html#usestate
+  //! State degiskeninin degeri, 1.render ile initialState
+  //! parametresinin ilk degerini alir. Dolayisiyle bu durumda
+  //! prop'tan gelen ilk deger state'e aktarilir.
+  //! Sonradan degisen props degerleri useState'e aktarilmaz.
+  //! Eger props'tan gelen degerleri her degisimde useState'e
+  //! aktarmak istersek useEffect hook'unu componentDidUpdate
+  //! gibi kullanabiriz.
+
+  useEffect(() => {
+    setTitle(newTitle);
+    setDesc(description);
+  }, [newTitle, description]);
+
+  const handleSave = (e) => {
+    e.preventDefault();
+    editTutorial(id, title, desc);
+    setTitle("");
+    setDesc("");
+  };
+
   return (
     <div className="modal" tabIndex="-1" id="edit-modal">
       <div className="modal-dialog">
@@ -13,18 +44,46 @@ const EditTutorial = () => {
             ></button>
           </div>
           <div className="modal-body">
-            <p>Modal body text goes here.</p>
+            <div className="mb-3">
+              <label htmlFor="title" className="form-label">
+                Title
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="title"
+                placeholder="Enter your title"
+                value={title || ""}
+                onChange={(e) => setTitle(e.target.value)}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="desc" className="form-label">
+                Description
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="desc"
+                placeholder="Enter your Description"
+                value={desc || ""}
+                onChange={(e) => setDesc(e.target.value)}
+                required
+              />
+            </div>
           </div>
           <div className="modal-footer">
             <button
               type="button"
-              className="btn btn-secondary"
+              className="btn btn-primary"
+              onClick={handleSave}
               data-bs-dismiss="modal"
+              //!   data-bs-dismiss ile close özelliği de tanımladık
+
+              //! en altta olmalı
             >
-              Close
-            </button>
-            <button type="button" className="btn btn-primary">
-              Save changes
+              Save
             </button>
           </div>
         </div>
@@ -34,3 +93,4 @@ const EditTutorial = () => {
 };
 
 export default EditTutorial;
+

@@ -1,9 +1,11 @@
 import { FaEdit } from 'react-icons/fa';
 import { AiFillDelete } from 'react-icons/ai';
 import EditTutorial from './EditTutorial';
-
+import { useState } from 'react';
 
 const TutorialList = ({tutorials,deleteTutorial,editTutorial}) => {
+  const [edited,setEdited] =useState("")
+  //!boş olarak atarsan id undefined olur
   // const tutorials = [
   //   {
   //     id:1,
@@ -26,7 +28,6 @@ const TutorialList = ({tutorials,deleteTutorial,editTutorial}) => {
             <th scope="col">#id</th>
             <th scope="col">Title</th>
             <th scope="col">Description</th>
-            <th scope="col">Day & Time</th>
             <th scope="col" className="text-center">
               Edit
             </th>
@@ -34,25 +35,27 @@ const TutorialList = ({tutorials,deleteTutorial,editTutorial}) => {
         </thead>
         <tbody>
           {tutorials?.map((item) => {
-            const { id, title, description,day} = item;
+            const { id, title, description } = item;
             return (
               <tr key={id}>
                 <th>{id}</th>
                 <td>{title}</td>
                 <td>{description}</td>
-                <td>{day}</td>
-                <td className="text-center text-nowrap">
+                <td className="text-center">
                   <FaEdit
-                  data-toggle="modal" 
-                  data-target="#edit-modal"
-                  size={20}
-                  className="me-2 text-warning cursor-pointer"
-                  onClick={()=>editTutorial(id,"css","html")}
+                    data-bs-toggle="modal"
+                    data-bs-target="#edit-modal"
+                    // role={button}
+                    // onClick={()=> editTutorial(id,"CSS","html")}
+                    onClick={()=>setEdited(item)}
+                    size={20}
+                    className="me-3 text-warning cursor-pointer "
+                   
                   />
                   <AiFillDelete
                     size={22}
-                    className="text-danger cursor-pointer"
-                    onClick={()=>deleteTutorial(id)}
+                    className="text-danger"
+                    onClick={() => deleteTutorial(id)}
                   />
                 </td>
               </tr>
@@ -60,9 +63,7 @@ const TutorialList = ({tutorials,deleteTutorial,editTutorial}) => {
           })}
         </tbody>
       </table>
-      <EditTutorial/>
-
-      
+     <EditTutorial editTutorial ={editTutorial} edited ={edited}/>
     </div>
   );
 };

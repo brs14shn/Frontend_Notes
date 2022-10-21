@@ -5,10 +5,11 @@ const AddTutorial = ({addTutorial}) => {
   const [desc, setDesc] = useState('');
   const [day,setDay] =useState("")
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if(title!=="" && desc!==""){
-      addTutorial({title:title,description:desc,createdAt:day})
+      addTutorial({title:title,description:desc})
     }
   
     setTitle('');
