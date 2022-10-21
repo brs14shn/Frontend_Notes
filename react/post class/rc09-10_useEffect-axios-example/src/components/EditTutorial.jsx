@@ -16,7 +16,7 @@ const EditTutorial = ({ editTutorial, edited }) => {
   //! Sonradan degisen props degerleri useState'e aktarilmaz.
   //! Eger props'tan gelen degerleri her degisimde useState'e
   //! aktarmak istersek useEffect hook'unu componentDidUpdate
-  //! gibi kullanabiriz.
+  //! gibi kullanabiriz. 
 
   useEffect(() => {
     setTitle(newTitle);
@@ -29,6 +29,15 @@ const EditTutorial = ({ editTutorial, edited }) => {
     setTitle("");
     setDesc("");
   };
+
+  //! Gelen id de hata olmamak için Tutorlist içindeli edited State "" hale getirdik.
+  //! Bootstrap modal kullanmak için js linkini public içerisindeki index.html dosyasına import ettik.
+  //! EditTutorial modal olarak oluşturduk id olarak "edit-modal" ismiyle tanımladık ve
+  //! TutorList edit iconuna " data-bs-toggle="modal" data-bs-target="#edit-modal" ile bağladık
+  //! Save butonuna data-bs-dismiss ile close özelliği de tanımladık.
+  //! TutoList bulunan verileri initial olarak statelere atadık ve useEffect WillUpdate özelliğini aktif ettik
+  //! Destructuring aynı isimleri değiştirdik.
+  //! Home.js içerisinde tanımlanan EditTutorial içerisine gücellenen verileri gönderdik.
 
   return (
     <div className="modal" tabIndex="-1" id="edit-modal">
@@ -79,9 +88,7 @@ const EditTutorial = ({ editTutorial, edited }) => {
               className="btn btn-primary"
               onClick={handleSave}
               data-bs-dismiss="modal"
-              //!   data-bs-dismiss ile close özelliği de tanımladık
-
-              //! en altta olmalı
+              
             >
               Save
             </button>
