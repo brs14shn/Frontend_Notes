@@ -27,8 +27,6 @@ Google router üzerinden belirtilen sayfaları indexleme yapamadığından SEO a
 
 ### Server Side Rendering
 
-### BrowserRouter
-
 ### Router Components
 
  - <span style="color:red;font-weight:bolder;font-size:2rem">BrowserRouter</span>
