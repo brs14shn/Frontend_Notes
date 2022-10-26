@@ -18,6 +18,7 @@ function App() {
       <Route path ="/instructors" element={  <Instructors />} />
       <Route path ="/instructors/:id" element={<InstructorsDetails/>} />
       <Route path ="/contact" element={ <Contact />} />
+      {/* <Route path ="/contact" element={ <Navigate to="/">} /> */}
       <Route path ="*" element={ <NotFound />} />
     </Routes>
      
