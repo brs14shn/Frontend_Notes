@@ -32,7 +32,7 @@ const Instructors = () => {
         
               <img
                 src={`https://avatars.dicebear.com/v2/avataaars/${id}.svg`}
-                alt=""
+                alt="avatar"
               />
               <h6>{name}</h6>
             </div>
