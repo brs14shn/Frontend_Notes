@@ -29,7 +29,6 @@ const Instructors = () => {
               className="col-sm-12 col-md-6 col-lg-4"
               key={id}
             >
-        
               <img
                 src={`https://avatars.dicebear.com/v2/avataaars/${id}.svg`}
                 alt="avatar"
