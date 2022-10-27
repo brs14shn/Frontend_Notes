@@ -6,6 +6,7 @@ import Instructors from './pages/Instructors';
 import NotFound from './pages/NotFound';
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import InstructorsDetails from './pages/InstructorsDetails';
+import Paths from './pages/Paths';
 
 function App() {
   return (
@@ -18,6 +19,12 @@ function App() {
       <Route path ="/instructors" element={  <Instructors />} />
       <Route path ="/instructors/:id" element={<InstructorsDetails/>} />
       <Route path ="/contact" element={ <Contact />} />
+      <Route path='/paths' element={<Paths/>} />
+
+
+
+
+      
       {/* <Route path ="/contact" element={ <Navigate to="/">} /> */}
       <Route path ="*" element={ <NotFound />} />
     </Routes>
