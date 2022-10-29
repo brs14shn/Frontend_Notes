@@ -4,6 +4,7 @@ import "./HoverCard.css";
 
 const HoverCardUseEffect = () => {
   const [products, setProducts] = useState([]);
+  const [searchText,setSearchText] = useState("")
 
   const url = "https://dummyjson.com/products";
 
@@ -26,6 +27,8 @@ const HoverCardUseEffect = () => {
   return (
     <div>
       <h4 className="text-center mt-4">Products</h4>
+      <div className="text-center mb-3"><input onChange={(e)=>setSearchText(e.target.value)} type="text" className="text-center w-75 p-2"/></div>
+      
 
       <div className="row d-flex gap-5 flex-wrap justify-content-center ">
         {products.map((item, id) => {
