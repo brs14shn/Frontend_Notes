@@ -3,6 +3,7 @@
 
 ## ✏ REACT INITIAL SETUP ✏
 
+
 #npx 👇
 ```
 💻 Go to terminal
