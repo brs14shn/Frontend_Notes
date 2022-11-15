@@ -3,7 +3,8 @@ import Counter from './components/counter/Counter';
 import Todo from './components/todo/Todo';
 import {createStore} from "redux"
 import {Provider} from "react-redux"
-import reducer from './redux';
+// import reducer from './redux';
+import reducer from './redux/reducers/counterReducer';
 
 
 function App() {
