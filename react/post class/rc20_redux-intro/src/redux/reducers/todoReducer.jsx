@@ -5,7 +5,7 @@ const initialState = {}
 const todoReducer =(state = initialState, { type, payload }) => {
   switch (type) {
 
-  case first:
+  case "ADD_TODO":
     return { ...state, ...payload }
 
   default:

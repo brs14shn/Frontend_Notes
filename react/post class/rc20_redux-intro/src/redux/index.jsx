@@ -46,7 +46,7 @@ const rootReducer = combineReducers(
     }
 )
 
-export const combinedStore =()=>{
+export const getStore =()=>{
     const store = createStore(rootReducer)
     return store
 }
