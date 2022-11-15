@@ -7,8 +7,10 @@ const initialState = {
     {
         id:new Date().getTime(),
         text:"Work on Redux",
-        isDone:"True"
+        isDone:true
     }
+    
+    
    ]
 }
 
@@ -16,13 +18,15 @@ const todoReducer =(state = initialState, { type, payload }) => {
   switch (type) {
 
   case ADD_TODO:
-    return { ...state, ...payload }
+    return {
+        todoList:[...state.todoList,{id:new Date().getTime(),text:payload, isDone:false}] 
+     }
   case TOGGLE_TODO:
     return { ...state, ...payload }
   case DELETE_TODO:
     return { ...state, ...payload }
   case CLEAR_TODO:
-    return { ...state, ...payload }
+    return initialState
 
   default:
     return state

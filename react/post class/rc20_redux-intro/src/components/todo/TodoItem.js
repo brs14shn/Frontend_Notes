@@ -2,14 +2,14 @@ import React from 'react';
 import okLogo from '../../assets/ok.png';
 import deleteLogo from '../../assets/delete.png';
 
-const TodoItem = ({ completed, text, id }) => {
+const TodoItem = ({ isDone, text, id }) => {
   const handleToggle = () => {};
 
   const handleDelete = () => {};
 
   const styled = {
-    textDecoration: completed ? 'line-through' : 'none',
-    backgroundColor: completed ? '#A9A9A9' : 'orange',
+    textDecoration: isDone ? 'line-through' : 'none',
+    backgroundColor: isDone ? '#A9A9A9' : 'orange',
     borderRadius: '5px',
   };
 
