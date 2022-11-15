@@ -34,10 +34,19 @@
 
 import {createStore,combineReducers} from "redux"
 import counterReducer from "../redux/reducers/counterReducer"
+import todoReducer from "./reducers/todoReducer"
 
+
+//? İki tane reducer birleştirmiş olduk.
 const rootReducer = combineReducers(
     {
+        counterReducer: counterReducer,
+        todoReducer: todoReducer,
 
     }
 )
 
+export const combinedStore =()=>{
+    const store = createStore(rootReducer)
+    return store
+}
