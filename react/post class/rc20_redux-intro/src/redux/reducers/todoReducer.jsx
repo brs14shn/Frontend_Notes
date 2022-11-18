@@ -14,7 +14,9 @@ const initialState = {
    ]
 }
 
+
 const todoReducer =(state = initialState, { type, payload }) => {
+   
   switch (type) {
 
   case ADD_TODO:
@@ -24,7 +26,15 @@ const todoReducer =(state = initialState, { type, payload }) => {
   case TOGGLE_TODO:
     return { ...state, ...payload }
   case DELETE_TODO:
-    return { ...state, ...payload }
+    const newTodos =state.todoList.filter((item)=>item.id !== payload.id)
+    return { 
+        // ...state,
+        // todoList:newTodos
+        
+      
+
+       
+     }
   case CLEAR_TODO:
     return initialState
 
