@@ -43,7 +43,7 @@
         Click
       </button>
     </div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nam eligendi deserunt labore optio, quae fugiat dolores, error amet quidem consequatur porro quam, repellendus dignissimos a animi neque? Quae explicabo id cupiditate veniam. Doloribus eos, sit distinctio, necessitatibus incidunt commodi quibusdam ipsam qui, ut laborum ipsum debitis maiores dolore expedita? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores corrupti ad adipisci nam, perspiciatis voluptatum quaerat, odit placeat nesciunt quas minima recusandae quos? Recusandae inventore similique vero exercitationem assumenda error debiti</p>
+    <p class="container">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nam eligendi deserunt labore optio, quae fugiat dolores, error amet quidem consequatur porro quam, repellendus dignissimos a animi neque? Quae explicabo id cupiditate veniam. Doloribus eos, sit distinctio, necessitatibus incidunt commodi quibusdam ipsam qui, ut laborum ipsum debitis maiores dolore expedita? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores corrupti ad adipisci nam, perspiciatis voluptatum quaerat, odit placeat nesciunt quas minima recusandae quos? Recusandae inventore similique vero exercitationem assumenda error debiti</p>
 
     <div aria-live="polite" aria-atomic="true" style="position: absolute; min-height: 200px;">
         <div class="toast bg-danger" id="myToast" style="position: fixed; top:0; right:5px; z-index:1000" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
@@ -101,7 +101,7 @@
         }else if (regex.test(valueInput)==false){
             console.log("Regex çalıştı mı?");
 
-            toastBody.innerHTML="Kullanıcı adı sayısal ifade içermemeli ve en az 6 karakter içermelidir"
+            toastBody.innerHTML="Kullanıcı adı sayısal ifade içermemeli veya en az 6 karakter içermelidir"
             valueInput=""
 
         }
