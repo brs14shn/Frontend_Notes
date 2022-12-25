@@ -1,8 +1,8 @@
-const fahrenheitTocelsius = (temp) = (temp - 32) / 1.8;
+const fahrenheitTocelsius = (temp) => (temp - 32) / 1.8;
 
-const celsiusToFahrenheit =(temp) = temp * 1.8 + 32;
+const celsiusToFahrenheit =(temp) => temp * 1.8 + 32;
 
-const calculateTotal = (price, vat = 0.18) = price * (1 + vat);
+const calculateTotal = (price, vat = 0.18) => price * (1 + vat);
 
 const fibonacci = (num = 1) => {
     if (num < 1) {
