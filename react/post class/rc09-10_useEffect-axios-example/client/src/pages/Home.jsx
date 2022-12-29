@@ -7,8 +7,8 @@ import {toastWarnNotify} from "../helper/ToastNotify"
 
 const Home = () => {
   const [tutorials, setTutorials] = useState();
-
-  const url = 'http://127.0.0.1:8000/api/tutorials/';
+  //https://tutorials.pythonanywhere.com/api/tutorials/
+  const url = 'https://tutorials.pythonanywhere.com/api/tutorials/';
 
   //! verilerimizi çağırıyoruz.
   //! GET(READ)
