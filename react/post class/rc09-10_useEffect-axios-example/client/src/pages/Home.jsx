@@ -8,7 +8,7 @@ import {toastWarnNotify} from "../helper/ToastNotify"
 const Home = () => {
   const [tutorials, setTutorials] = useState();
 
-  const url = 'https://tutorials-api-cw.herokuapp.com/api/tutorials';
+  const url = 'http://127.0.0.1:8000/api/tutorials/';
 
   //! verilerimizi çağırıyoruz.
   //! GET(READ)
@@ -45,7 +45,7 @@ console.log(tutorials) // ilk undefined gelir çünkü ilk render işlemi tetikl
 const addTutorial = async(tutorial)=>{
   try {
    const res = await axios.post(url,tutorial) 
-   if(res.status===200){
+   if(res.status===201){
     getTutorials()
     toastSuccessNotify("Tutorial added")
    }
@@ -61,7 +61,7 @@ const addTutorial = async(tutorial)=>{
   const deleteTutorial =async(id)=>{
 
     try {
-      await axios.delete(`${url}/${id}`)
+      await axios.delete(`${url}${id}`)
       
     } catch (error) {
       console.log(error);
@@ -80,7 +80,7 @@ const addTutorial = async(tutorial)=>{
     console.log(filtered)
 
     try {
-      await axios.put(`${url}/${id}`,filtered[0])
+      await axios.put(`${url}${id}/`,filtered[0])
       
     } catch (error) {
       
