@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+  </head>
+  <style>
+    .item-desc{
+        display: none;
+        font-size: 1.5rem;
+        height: 0;
+        overflow: hidden;
+      
+    }
+    .item-title{
+        background-color: #f1f1f1;
+        border: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+        padding: 1rem;
+        width: 100%;
+        text-align: left;
+        outline: none;
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid black;
+        margin-bottom: 1rem;
+        box-shadow: 2px 2px ;
+    }
+    i{
+        margin-left: auto;
+       display: none;
+        transform: rotate(180deg);
+    }
+    .active i{
+        transform: rotate(360deg);
+        color:white;
+        font-size: 2rem;
+    }
+    .active .item-title{
+        background-color:brown;
+    }
+    .active .item-desc{
+        display: block;
+        height: auto;
+        padding: 10px;
+    }
+        
+  </style>
+  <body>
+    <div class="container">
+      <div class="faq-item-container">
+        <button class="item-title">HTML Nedir?
+        <i class="fa-solid fa-arrow-down"></i>
+        </button>
+        
+       
+        <div class="item-desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum labore esse nobis earum adipisci a laudantium quia architecto illum odit fuga ipsum hic, nisi delectus aut aperiam laboriosam sequi inventore molestiae voluptatem asperiores velit tempore placeat facilis? Tempore, doloribus. Voluptates, ea! Dolorem aut pariatur ea nisi laboriosam sequi odit laborum.
+        </div>
+      <div class="faq-item-container">
+        <button class="item-title">CSS nedir?<i class="fa-solid fa-arrow-down"></i></button>
+        <div class="item-desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum labore esse nobis earum adipisci a laudantium quia architecto illum odit fuga ipsum hic, nisi delectus aut aperiam laboriosam sequi inventore molestiae voluptatem asperiores velit tempore placeat facilis? Tempore, doloribus. Voluptates, ea! Dolorem aut pariatur ea nisi laboriosam sequi odit laborum.
+        </div>
+      <div class="faq-item-container">
+        <button class="item-title">JS Nedir?<i class="fa-solid fa-arrow-down"></i></button>
+        <div class="item-desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum labore esse nobis earum adipisci a laudantium quia architecto illum odit fuga ipsum hic, nisi delectus aut aperiam laboriosam sequi inventore molestiae voluptatem asperiores velit tempore placeat facilis? Tempore, doloribus. Voluptates, ea! Dolorem aut pariatur ea nisi laboriosam sequi odit laborum.
+        </div>
+      </div>
+    </div>
+    <script>
+        //const faqItemContainer = document.querySelectorAll(".faq-item-container");
+        //faqItemContainer.forEach((item) => {
+           // item.addEventListener("click", () => {
+            //item.classList.toggle("active");
+            ///});
+        //});
+        document.querySelectorAll(".item-title").forEach((item) => {
+            item.addEventListener("click", () => {
+                item.parentElement.classList.toggle("active");
+                const icon =document.querySelector(".fa-arrow-down")
+                icon.style.transform="rotate(360deg)" 
+            });
+        });
+      
+    </script>
+  </body>
+</html>
